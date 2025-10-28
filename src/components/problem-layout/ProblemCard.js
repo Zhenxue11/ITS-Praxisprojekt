@@ -251,7 +251,7 @@ class ProblemCard extends React.Component {
             ),
             questionText: stepBody.trim() || stepTitle.trim(),
         });
-
+        console.log(inputVal, stepAnswer,"result")
         const isCorrect = !!correctAnswer;
 
         this.context.firebase.log(

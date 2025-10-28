@@ -1,5 +1,7 @@
 export const popupStyles = {
     popupContent: {
+        display: 'flex',
+        flexDirection: 'column',
         background: '#FFF',
         padding: '0px 30px 30px 30px',
         borderRadius: '8px',
@@ -22,9 +24,10 @@ export const popupStyles = {
         },
     },
     button: {
-        position: 'absolute',
+        alignSelf: 'flex-end',
+        marginTop: '5px',
+        position: 'sticky',
         top: '5px',
-        right: '5px',
         fontSize: '20px',
         background: 'none',
         border: 'none',

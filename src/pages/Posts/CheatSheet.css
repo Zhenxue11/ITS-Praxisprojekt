@@ -1,0 +1,44 @@
+.cheat-sheet {
+    background-color: #fefefe; /* lighter background */
+    padding: 20px;
+    overflow-y: auto;
+    font-family: 'Fira Code', 'Courier New', monospace; /* coding font */
+    font-size: 14px;
+    color: #333;
+}
+
+.cheat-section {
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee; /* visually separate sections */
+}
+
+.section-title {
+    font-size: 1.4rem;
+    color: #222;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    margin: 5px 0;
+}
+
+ul {
+    padding-left: 25px;
+    margin: 8px 0;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+li:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}

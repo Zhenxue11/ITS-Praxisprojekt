@@ -34,6 +34,7 @@ import { stagingProp } from "../../util/addStagingProperty";
 import { cleanArray } from "../../util/cleanObject";
 import Popup from '../Popup/Popup.js';
 import About from '../../pages/Posts/About.js';
+import CheatSheet from "../../pages/Posts/Cheatsheet.js";
 
 class Problem extends React.Component {
     static defaultProps = {
@@ -81,7 +82,8 @@ class Problem extends React.Component {
             showFeedback: false,
             feedback: "",
             feedbackSubmitted: false,
-            showPopup: false
+            showPopup: false,
+            showCheatSheet: false
         };
     }
 
@@ -350,6 +352,29 @@ class Problem extends React.Component {
         });
     };
 
+    clickCheatSheet = async () => {
+        
+        const { lesson } = this.props;
+
+        if (!lesson.allowCheatSheet) {
+            console.log("Cheat sheet not allowed");
+            return;
+        }
+
+        try {
+            // Dynamic import based on lesson.id
+            const cheatSheet = await import(`../../cheatSheet/${lesson.id}/cheatSheet.json`);
+            console.log("Cheat sheet data:", cheatSheet.default);
+            this.setState({ 
+                cheatSheetData: cheatSheet.default,
+                showCheatSheet: true 
+            });
+        } catch (error) {
+            console.error("Error loading cheat sheet:", error);
+        }
+    };
+
+
     submitFeedback = () => {
         const { problem } = this.props;
 
@@ -379,6 +404,12 @@ class Problem extends React.Component {
           showPopup: !prevState.showPopup,
         }));
     };
+
+    toggleCheatSheet =()=>{
+        this.setState((prevState) => ({
+          showCheatSheet: !prevState.showCheatSheet,
+        }));
+    }
 
     _getNextDebug = (offset) => {
         return (
@@ -428,6 +459,10 @@ class Problem extends React.Component {
     };
 
     render() {
+        // cheatSheetData start
+        const { cheatSheetData } = this.state;
+        const { showCheatSheet } = this.state;
+        // end
         const { translate } = this.props;
         const { classes, problem, seed } = this.props;
         const [oerLink, oerName, licenseLink, licenseName] =
@@ -578,6 +613,12 @@ class Problem extends React.Component {
                             </Grid>
                         )}
                     </div>
+                </div>
+                <div class="cheatSheet">
+                    <button onClick={this.clickCheatSheet}>Cheat Sheet</button>
+                    <Popup isOpen={showCheatSheet} onClose={this.toggleCheatSheet}>
+                        {cheatSheetData && <CheatSheet cheatSheetData={cheatSheetData} />}
+                    </Popup>
                 </div>
                 <footer>
                     <div

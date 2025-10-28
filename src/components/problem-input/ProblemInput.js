@@ -12,6 +12,8 @@ import { shuffleArray } from "../../util/shuffleArray";
 import { EQUATION_EDITOR_AUTO_COMMANDS, EQUATION_EDITOR_AUTO_OPERATORS, ThemeContext } from "../../config/config";
 import { stagingProp } from "../../util/addStagingProperty";
 import { parseMatrixTex } from "../../util/parseMatrixTex";
+// add python assembly
+import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.mjs";
 
 class ProblemInput extends React.Component {
     static contextType = ThemeContext;
@@ -31,12 +33,20 @@ class ProblemInput extends React.Component {
         };
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         document.addEventListener('click', this.handleClickOutside);
 
         console.debug('problem', this.props.step, 'seed', this.props.seed)
         if (this.isMatrixInput()) {
             console.log('automatically determined matrix input to be the correct problem type')
+        }
+
+        try {
+            const pyodideModule = await loadPyodide();
+            this.setState({ pyodide: pyodideModule });
+            console.log("Pyodide loaded!");
+        } catch (err) {
+            console.error(" Failed to load Pyodide:", err);
         }
 
         const mqDisplayArea = this.equationRef?.current?.querySelector(".mq-editable-field > .mq-root-block")
@@ -49,7 +59,51 @@ class ProblemInput extends React.Component {
             textareaEl.ariaLabel = `Answer question number ${this.props.index} here`
         }
     }
+    runPython = async () => {
+        const { pyodide, pythonCode } = this.state;
+        if (!pyodide) return;
 
+        // 1. Initialize output to empty string
+        let output = ""; 
+
+        try {
+            // 2. Load the StringIO class from the io module (if not already loaded)
+            // This only needs to be run once, but running it here ensures it's available.
+            pyodide.runPython("import io, sys");
+
+            // 3. Create an in-memory stream object to capture output
+            pyodide.runPython("sys.stdout = io.StringIO()");
+
+            // 4. Execute the user's Python code
+            // The output of print() will now go into the StringIO buffer
+            const result = pyodide.runPython(`${pythonCode}`); 
+            
+            // 5. Retrieve the buffered content from StringIO
+            output = pyodide.runPython("sys.stdout.getvalue()");
+            
+            // 6. Restore sys.stdout (optional but good practice)
+            pyodide.runPython("sys.stdout = sys.__stdout__");
+
+            // 7. If the code didn't use print() but returned a value (like "1+1"), 
+            // append the result's string representation.
+            if (!output && result !== undefined && result !== null) {
+                output = result.toString();
+            }
+
+            const finalOutput = output || "(no output)";
+
+            this.setState({ pythonOutput: finalOutput });
+            console.log("result", pythonCode)
+            // 8. CRITICAL: Set the Python output as the problem's input value
+            // This prepares the value to be used by ProblemCard's submit function.
+            this.props.setInputValState(pythonCode);
+        } catch (err) {
+            // If the Python code throws an error (e.g., SyntaxError), 
+            // the traceback will be captured here.
+            this.setState({ pythonOutput: err.toString() });
+            console.error("Python Execution Error:", err);
+        }
+    };
     componentDidUpdate(_, prevState) {
         if (prevState.isMathFieldFocused !== this.state.isMathFieldFocused && !this.state.isMathFieldFocused) {
             const mathField = this.mathFieldRef.current;
@@ -244,6 +298,50 @@ class ProblemInput extends React.Component {
                             } : {}}
                         />
                     )}
+                    {problemType === "pythonInput" && (
+                        <div style={{ marginTop: "1rem" }}>
+                            <TextField
+                            label="Python Code"
+                            multiline
+                            fullWidth
+                            rows={6}
+                            value={this.state.pythonCode}
+                            onChange={(e) => this.setState({ pythonCode: e.target.value })}
+                            variant="outlined"
+                            inputProps={{ style: { fontFamily: "monospace" } }}
+                            />
+                            <button
+                            onClick={this.runPython}
+                            disabled={!this.state.pyodide}
+                            style={{
+                                marginTop: "10px",
+                                background: "#1976d2",
+                                color: "white",
+                                padding: "8px 16px",
+                                border: "none",
+                                borderRadius: "4px",
+                                cursor: this.state.pyodide ? "pointer" : "not-allowed"
+                            }}
+                            >
+                            {this.state.pyodide ? "Run Python" : "Loading..."}
+                            </button>
+
+                            <pre
+                            style={{
+                                background: "#f5f5f5",
+                                borderRadius: "6px",
+                                padding: "10px",
+                                marginTop: "10px",
+                                minHeight: "50px",
+                                fontFamily: "monospace",
+                                whiteSpace: "pre-wrap"
+                            }}
+                            >
+                            {this.state.pythonOutput || "Output will appear here..."}
+                            </pre>
+                        </div>
+                    )}
+
                 </Grid>
                 <Grid item xs={2} md={1}>
                     <div style={{ marginLeft: "20%" }}>
