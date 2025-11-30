@@ -40,15 +40,6 @@ class ProblemInput extends React.Component {
         if (this.isMatrixInput()) {
             console.log('automatically determined matrix input to be the correct problem type')
         }
-
-        try {
-            const pyodideModule = await loadPyodide();
-            this.setState({ pyodide: pyodideModule });
-            console.log("Pyodide loaded!");
-        } catch (err) {
-            console.error(" Failed to load Pyodide:", err);
-        }
-
         const mqDisplayArea = this.equationRef?.current?.querySelector(".mq-editable-field > .mq-root-block")
         if (mqDisplayArea != null) {
             mqDisplayArea.ariaHidden = true
@@ -60,8 +51,14 @@ class ProblemInput extends React.Component {
         }
     }
     runPython = async () => {
-        const { pyodide, pythonCode } = this.state;
-        if (!pyodide) return;
+        const { pythonCode } = this.state;
+        let pyodide
+        try {
+            pyodide = await loadPyodide();
+            console.log("Pyodide loaded!");
+        } catch (err) {
+            console.error(" Failed to load Pyodide:", err);
+        }
 
         // 1. Initialize output to empty string
         let output = ""; 
