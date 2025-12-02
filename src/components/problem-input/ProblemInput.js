@@ -62,7 +62,8 @@ class ProblemInput extends React.Component {
     }
     runPython = async () => {
         const { pythonCode } = this.state;
-
+        // 8. CRITICAL: Set the Python output as the problem's input value
+        this.props.setInputValState(pythonCode);
         try {
             // Load Pyodide only if it's not already loaded
             const pyodide = await loadPyodideOnce();
@@ -95,8 +96,6 @@ class ProblemInput extends React.Component {
             this.setState({ pythonOutput: finalOutput });
             console.log("result", pythonCode);
 
-            // 8. CRITICAL: Set the Python output as the problem's input value
-            this.props.setInputValState(pythonCode);
         } catch (err) {
             this.setState({ pythonOutput: err.toString() });
             console.error("Python Execution Error:", err);
@@ -137,6 +136,7 @@ class ProblemInput extends React.Component {
     };
 
     isMatrixInput() {
+        console.log(this.props.step.stepAnswer,"checkkkk")
         if (this.props.step?.stepAnswer) {
             return this.props.step?.problemType !== "MultipleChoice" &&
                 /\\begin{[a-zA-Z]?matrix}/.test(this.props.step.stepAnswer[0])
@@ -172,7 +172,6 @@ class ProblemInput extends React.Component {
     }
     
     render() {
-        console.log("check this is pyodide", this.state.pyodide)
         const { classes, state, index, showCorrectness, allowRetry, variabilization } = this.props;
         const { use_expanded_view, debug } = this.context;
         let { problemType, stepAnswer, hintAnswer, units } = this.props.step;
