@@ -37,3 +37,7 @@ oatutor-firebase-adminsdk.json
 pnpm-lock.yaml
 
 /generated
+
+# macOS
+.DS_Store
+**/.DS_Store
