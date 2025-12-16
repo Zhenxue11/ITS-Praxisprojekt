@@ -1,0 +1,18 @@
+{
+"List": {
+"Example": "nums = [1, 2, 3]",
+"Methods": ["append()", "remove()", "len()"]
+},
+"Tuple": {
+"Example": "coords = (4, 5)",
+"Note": "Tuples are immutable"
+},
+"Set": {
+"Example": "s = {1, 2, 3}",
+"Note": "Stores unique values"
+},
+"Dictionary": {
+"Example": "d = {'a': 1}",
+"Access": "d['a']"
+}
+}
