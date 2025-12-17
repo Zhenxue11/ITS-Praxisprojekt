@@ -1,63 +1,21 @@
 {
-  "VariableBasics": {
-    "Examples": {
-      "integer": "x = 5",
-      "string": "name = 'Bob'",
-      "float": "pi = 3.14",
-      "boolean": "is_active = True"
-    },
-    "NamingRules": [
-      "Must start with a letter or underscore (_)",
-      "Can contain letters, numbers, underscores",
-      "Case-sensitive: age != Age",
-      "Cannot use Python keywords (if, for, class, etc.)"
-    ]
-  },
-  "MultipleAssignments": {
-    "Examples": [
-      "a, b, c = 1, 2, 3",
-      "x = y = z = 0"
-    ]
-  },
-  "DataTypes": {
-    "int": "x = 10",
-    "float": "pi = 3.14",
-    "str": "name = 'Alice'",
-    "bool": "flag = True",
-    "list": "nums = [1,2,3]",
-    "tuple": "coords = (4,5)",
-    "set": "s = {1,2,3}",
-    "dict": "d = {'a':1}",
-    "NoneType": "x = None"
-  },
-  "TypeConversion": {
-    "int": "int('10')",
-    "float": "float(5)",
-    "str": "str(100)",
-    "bool": "bool(0)",
-    "list": "list((1,2))"
-  },
-  "CheckingType": {
-    "type": "type(x)",
-    "isinstance": "isinstance(x, int)"
-  },
-  "Constants": {
-    "Note": "Python has no true constants. Use UPPER_CASE by convention.",
-    "Examples": [
-      "PI = 3.14159",
-      "MAX_USERS = 100"
-    ]
-  },
-  "VariableScope": {
-    "Local": "Inside a function",
-    "Global": "Outside all functions",
-    "Example": "x = 10 # global\n\ndef foo():\n    y = 5 # local\n    global x\n    x = 20"
-  },
-  "DynamicTyping": {
-    "Note": "Python variables can change type",
-    "Example": "x = 10\nx = 'hello' # int -> str"
-  },
-  "DeletingVariables": {
-    "Example": "x = 10\ndel x"
-  }
+"DataTypes": {
+"int": "x = 10",
+"float": "pi = 3.14",
+"str": "name = 'Alice'",
+"bool": "flag = True"
+},
+"CheckingType": {
+"type": "type(x)"
+},
+"TypeConversion": {
+"int": "int('10')",
+"float": "float(5)",
+"str": "str(100)",
+"bool": "bool(0)"
+},
+"MixingTypes": {
+"Note": "Mixing int and float results in float",
+"Example": "x = 3 + 4.5"
+}
 }
