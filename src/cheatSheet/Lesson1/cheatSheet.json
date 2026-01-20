@@ -1,0 +1,21 @@
+{
+"DataTypes": {
+"int": "x = 10",
+"float": "pi = 3.14",
+"str": "name = 'Alice'",
+"bool": "flag = True"
+},
+"CheckingType": {
+"type": "type(x)"
+},
+"TypeConversion": {
+"int": "int('10')",
+"float": "float(5)",
+"str": "str(100)",
+"bool": "bool(0)"
+},
+"MixingTypes": {
+"Note": "Mixing int and float results in float",
+"Example": "x = 3 + 4.5"
+}
+}

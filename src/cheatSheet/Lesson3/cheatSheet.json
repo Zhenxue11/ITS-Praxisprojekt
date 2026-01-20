@@ -1,0 +1,15 @@
+{
+"Conditionals": {
+"if": "if x > 0: print('Positive')",
+"elif": "elif x < 0: print('Negative')",
+"else": "else: print('Zero')"
+},
+"Loops": {
+"for": "for i in range(3): print(i)",
+"while": "while x < 5: x += 1"
+},
+"LoopControl": {
+"break": "if x == 3: break",
+"continue": "if x == 2: continue"
+}
+}

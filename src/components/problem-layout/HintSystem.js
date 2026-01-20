@@ -25,7 +25,9 @@ class HintSystem extends React.Component {
         super(props);
 
         var subHintsFinished = [];
+        console.log("Hints syste", this.props.hints)
         for (var i = 0; i < this.props.hints.length; i++) {
+            console.log(this.props.hints,"hint")
             subHintsFinished.push(
                 new Array(
                     this.props.hints[i].subHints !== undefined
@@ -58,12 +60,14 @@ class HintSystem extends React.Component {
     }
 
     unlockHint = (event, expanded, i) => {
+        console.log("expanded", this.state.currentExpanded, i)
         if (this.state.currentExpanded === i ) {
             this.setState({ currentExpanded: -1 });
         } else {
             this.setState({ currentExpanded: i });
             if (expanded && i < this.props.hintStatus.length) {
                 this.props.unlockHint(i, this.props.hints[i].type);
+                console.log(this.props.unlockHint, this.props.hintStatus, "check")
             }
             this.setState({ latestStep: i });
         }
@@ -102,6 +106,7 @@ class HintSystem extends React.Component {
     };
 
     unlockSubHint = (hintNum, i, isScaffold) => {
+        console.log("test hello world")
         this.setState(
             (prevState) => {
                 prevState.subHintsFinished[i][hintNum] = !isScaffold ? 1 : 0.5;
@@ -125,6 +130,7 @@ class HintSystem extends React.Component {
     };
 
     submitSubHint = (parsed, hint, isCorrect, i, hintNum) => {
+        console.log("test sumbt su hint")
         if (isCorrect) {
             this.setState((prevState) => {
                 prevState.subHintsFinished[i][hintNum] = 1;

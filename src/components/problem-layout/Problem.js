@@ -83,7 +83,8 @@ class Problem extends React.Component {
             feedback: "",
             feedbackSubmitted: false,
             showPopup: false,
-            showCheatSheet: false
+            showCheatSheet: false,
+            hintAllowed: false,
         };
     }
 
@@ -349,6 +350,7 @@ class Problem extends React.Component {
             problemFinished: false,
             feedback: "",
             feedbackSubmitted: false,
+            hintAllowed:false
         });
     };
 
@@ -367,7 +369,8 @@ class Problem extends React.Component {
             console.log("Cheat sheet data:", cheatSheet.default);
             this.setState({ 
                 cheatSheetData: cheatSheet.default,
-                showCheatSheet: true 
+                showCheatSheet: true,
+                hintAllowed: true
             });
         } catch (error) {
             console.error("Error loading cheat sheet:", error);
@@ -538,6 +541,7 @@ class Problem extends React.Component {
                                     giveStuBottomHint={this.giveStuBottomHint}
                                     giveDynamicHint={this.giveDynamicHint}
                                     prompt_template={this.prompt_template}
+                                    hintAllowed={this.state.hintAllowed}
                                 />
                             </Element>
                         ))}
@@ -614,8 +618,21 @@ class Problem extends React.Component {
                         )}
                     </div>
                 </div>
-                <div class="cheatSheet">
-                    <button onClick={this.clickCheatSheet}>Cheat Sheet</button>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        position: "fixed",
+                        bottom: 80,     
+                        left: 10
+                }}>
+                    <a onClick={this.clickCheatSheet}>
+                        <img src={`${process.env.PUBLIC_URL}/static/images/icons/syntaxGuide.png`} 
+                        style={{
+                            width: "70px",
+                            borderRadius: "50%",
+                        }}/>
+                    </a>
                     <Popup isOpen={showCheatSheet} onClose={this.toggleCheatSheet}>
                         {cheatSheetData && <CheatSheet cheatSheetData={cheatSheetData} />}
                     </Popup>
