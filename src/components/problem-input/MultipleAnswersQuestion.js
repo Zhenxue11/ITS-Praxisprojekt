@@ -3,7 +3,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import { renderText } from '../../platform-logic/renderText.js';
-import { ThemeContext } from "../../config/config";
+import { ThemeContext } from "../../config/config.js";
 
 class MultipleAnswersQuestion extends React.Component {
   static contextType = ThemeContext;

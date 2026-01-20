@@ -2,6 +2,7 @@ import React, { createRef } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import MultipleChoice from "./MultipleChoice";
+import MultipleAnswersQuestion from "./MultipleAnswersQuestion";
 import GridInput from "./GridInput";
 import MatrixInput from "./MatrixInput";
 import { renderText } from "../../platform-logic/renderText";
@@ -270,6 +271,18 @@ class ProblemInput extends React.Component {
                             variabilization={variabilization}
                         />
                     )}
+                    {/* MULTIPLE ANSWERS */}
+                    {problemType === "MultipleAnswersQuestion" && (
+                        <MultipleAnswersQuestion
+                            onChange={(values) => this.props.editInput(values)}
+                            choices={this.props.step.choices}
+                            index={index}
+                            {...(use_expanded_view && debug) ? {
+                                defaultValue: correctAnswer   // muss ein Array sein!
+                            } : {}}
+                            variabilization={variabilization}
+    />
+)}
                     {problemType === "GridInput" && (
                         <GridInput
                             onChange={(newVal) => this.props.setInputValState(newVal)}
