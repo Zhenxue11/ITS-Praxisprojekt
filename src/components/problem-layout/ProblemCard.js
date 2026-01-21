@@ -663,27 +663,6 @@ class ProblemCard extends React.Component {
                                     this.context 
                                 )} 
                             </span>
-                            {this.state.answerButon && (
-                                <button 
-                                    onClick={this.handleAnswerButton}
-                                    style={{
-                                        backgroundColor: "#4CAF50",
-                                        color: "white",
-                                        border: "none",
-                                        padding: "8px 16px",
-                                        borderRadius: "6px",
-                                        cursor: "pointer",
-                                        fontSize: "14px",
-                                        transition: "0.2s",
-                                    }}
-                                >
-                                    Answer
-                                </button>
-                            )}
-                            
-                <Popup isOpen={showPopup} onClose={this.togglePopup}>
-                    <AnswerPopUp answerText= {this.step.stepAnswer}/>
-                </Popup>
                         </div>
                         <hr />
                     </h2>
@@ -781,10 +760,19 @@ class ProblemCard extends React.Component {
                             {this.showHints && (
                                 <center>
                                     <Tooltip
-                                        title={!this.props.hintAllowed ? "Open Syntax Guide" : ""}
-                                        arrow
-                                        disableHoverListener={this.props.hintAllowed}
+                                        title={
+                                            !this.props.hintAllowed ? (
+                                                <span style={{ fontSize: "25px" }}>
+                                                    Please Open Syntax Guide
+                                                </span>
+                                            ) : ""
+                                        }
+                                        style={{
+                                            opacity: this.props.hintAllowed ? 1 : 0.3,
+                                            cursor: !this.props.hintAllowed ? "not-allowed" : "auto"
+                                        }}
                                     >
+                                        
                                         <span> 
                                             <IconButton
                                                 aria-label="syntax guide"
@@ -795,6 +783,7 @@ class ProblemCard extends React.Component {
                                                     "data-selenium-target": `hint-button-${this.props.index}`,
                                                 })}
                                             >
+                                                
                                                 <img
                                                     src={`${process.env.PUBLIC_URL}/static/images/icons/raise_hand.png`}
                                                     className={
@@ -802,6 +791,9 @@ class ProblemCard extends React.Component {
                                                             ? "image"
                                                             : "image image-grayed-out"
                                                     }
+                                                    style={{
+                                                        opacity: this.props.hintAllowed ? 1 : 0.3,
+                                                    }}
                                                     alt="hintToggle"
                                                 />
                                             </IconButton>
@@ -828,6 +820,30 @@ class ProblemCard extends React.Component {
                                     {translate('problem.Submit')}
                                 </Button>
                             </center>
+                        </Grid>
+                        <Grid item xs={4} sm={4} md={2}>
+                            <center>
+                            {this.state.answerButon && (
+                                <button 
+                                    onClick={this.handleAnswerButton}
+                                    style={{
+                                        backgroundColor: "#4CAF50",
+                                        color: "white",
+                                        border: "none",
+                                        padding: "8px 16px",
+                                        borderRadius: "6px",
+                                        cursor: "pointer",
+                                        fontSize: "14px",
+                                        transition: "0.2s",
+                                    }}
+                                >
+                                    Answer
+                                </button>
+                            )}
+                            </center>
+                            <Popup isOpen={showPopup} onClose={this.togglePopup}>
+                                <AnswerPopUp answerText= {this.step.stepAnswer}/>
+                            </Popup>
                         </Grid>
                         <Grid item xs={4} sm={3} md={1}>
                             <div

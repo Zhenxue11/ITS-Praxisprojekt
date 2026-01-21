@@ -514,6 +514,63 @@ class Problem extends React.Component {
                         <hr />
                     </div>
                     <div role={"main"}>
+                        <div
+                            style={{
+                                position: "sticky",
+                                top: 120,
+                                alignSelf: "flex-start",
+                                width: 120,
+                                marginLeft: 100,
+                                zIndex: 10,
+                            }}
+                            >
+                            <div
+                                onClick={this.clickCheatSheet}
+                                role="button"
+                                tabIndex={0}
+                                style={{
+                                cursor: "pointer",
+                                background: "#fff",
+                                borderRadius: 12,
+                                boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
+                                padding: 12,
+                                textAlign: "center",
+                                transition: "transform 0.2s, box-shadow 0.2s",
+                                }}
+                                onKeyDown={(e) => e.key === "Enter" && this.clickCheatSheet()}
+                                onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = "translateY(-2px)";
+                                e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.18)";
+                                }}
+                                onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = "none";
+                                e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.12)";
+                                }}
+                            >
+                                <img
+                                src={`${process.env.PUBLIC_URL}/static/images/icons/syntaxGuide.png`}
+                                alt="Syntax Guide"
+                                style={{
+                                    width: 64,
+                                    marginBottom: 8,
+                                }}
+                                />
+                                <div
+                                style={{
+                                    fontSize: 13,
+                                    fontWeight: 600,
+                                    color: "#333",
+                                }}
+                                >
+                                Syntax Guide
+                                </div>
+                            </div>
+
+                            <Popup isOpen={showCheatSheet} onClose={this.toggleCheatSheet}>
+                                {cheatSheetData && <CheatSheet cheatSheetData={cheatSheetData} />}
+                            </Popup>
+                        </div>
+
                         {problem.steps.map((step, idx) => (
                             <Element
                                 name={idx.toString()}
@@ -546,6 +603,7 @@ class Problem extends React.Component {
                             </Element>
                         ))}
                     </div>
+                    
                     <div width="100%">
                         {this.context.debug ? (
                             <Grid container spacing={0}>
@@ -618,25 +676,7 @@ class Problem extends React.Component {
                         )}
                     </div>
                 </div>
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-start",
-                        position: "fixed",
-                        bottom: 80,     
-                        left: 10
-                }}>
-                    <a onClick={this.clickCheatSheet}>
-                        <img src={`${process.env.PUBLIC_URL}/static/images/icons/syntaxGuide.png`} 
-                        style={{
-                            width: "70px",
-                            borderRadius: "50%",
-                        }}/>
-                    </a>
-                    <Popup isOpen={showCheatSheet} onClose={this.toggleCheatSheet}>
-                        {cheatSheetData && <CheatSheet cheatSheetData={cheatSheetData} />}
-                    </Popup>
-                </div>
+                
                 <footer>
                     <div
                         style={{
