@@ -32,7 +32,7 @@ class ProblemInput extends React.Component {
         this.state = {
             value: "",
             isMathFieldFocused: false,
-            pythonCode: "",
+            pythonCode: props.step.starterCode || "",
             pythonOutput: "",
             pyodide: null, 
         };
@@ -102,13 +102,20 @@ class ProblemInput extends React.Component {
             console.error("Python Execution Error:", err);
         }
     };
-    componentDidUpdate(_, prevState) {
+    componentDidUpdate(prevProps, prevState) {
         if (prevState.isMathFieldFocused !== this.state.isMathFieldFocused && !this.state.isMathFieldFocused) {
             const mathField = this.mathFieldRef.current;
         if (mathField) {
             mathField.executeCommand('hideVirtualKeyboard');
             console.log("componentDidUpdate hide keyboard")
         }}
+
+        // Step change (starter code)
+        if (prevProps.step.starterCode !== this.props.step.starterCode) {
+            this.setState({
+                pythonCode: this.props.step.starterCode || ""
+            });
+        }
     }
     
     componentWillUnmount() {
