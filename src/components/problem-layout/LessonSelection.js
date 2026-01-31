@@ -46,6 +46,7 @@ class LessonSelection extends React.Component {
             removedProgress: false,
             showPopup: false
         }
+        console.log("test", this)
     }
     getLessonMastery = (lesson) => {
         const { bktParams } = this.context;

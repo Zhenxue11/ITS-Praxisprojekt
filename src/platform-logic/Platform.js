@@ -73,6 +73,7 @@ class Platform extends React.Component {
         }
 
         this.selectLesson = this.selectLesson.bind(this);
+        console.log(this,"hello")
     }
 
     async componentDidMount() {

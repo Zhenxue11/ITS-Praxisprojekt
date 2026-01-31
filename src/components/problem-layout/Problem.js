@@ -602,6 +602,7 @@ class Problem extends React.Component {
                             </Element>
                         ))}
                     </div>
+                    
                     <div width="100%">
                         {this.context.debug ? (
                             <Grid container spacing={0}>

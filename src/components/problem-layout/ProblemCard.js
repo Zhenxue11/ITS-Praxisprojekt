@@ -773,6 +773,7 @@ class ProblemCard extends React.Component {
                                             cursor: !this.props.hintAllowed ? "not-allowed" : "auto"
                                         }}
                                     >
+                                        
                                         <span> 
                                             <IconButton
                                                 aria-label="syntax guide"
@@ -783,6 +784,7 @@ class ProblemCard extends React.Component {
                                                     "data-selenium-target": `hint-button-${this.props.index}`,
                                                 })}
                                             >
+                                                
                                                 <img
                                                     src={`${process.env.PUBLIC_URL}/static/images/icons/raise_hand.png`}
                                                     className={
