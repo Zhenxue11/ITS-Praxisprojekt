@@ -2,6 +2,7 @@ import React, { createRef } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import MultipleChoice from "./MultipleChoice";
+import MultipleAnswersQuestion from "./MultipleAnswersQuestion";
 import GridInput from "./GridInput";
 import MatrixInput from "./MatrixInput";
 import { renderText } from "../../platform-logic/renderText";
@@ -31,7 +32,7 @@ class ProblemInput extends React.Component {
         this.state = {
             value: "",
             isMathFieldFocused: false,
-            pythonCode: "",
+            pythonCode: props.step.starterCode || "",
             pythonOutput: "",
             pyodide: null, 
         };
@@ -101,13 +102,20 @@ class ProblemInput extends React.Component {
             console.error("Python Execution Error:", err);
         }
     };
-    componentDidUpdate(_, prevState) {
+    componentDidUpdate(prevProps, prevState) {
         if (prevState.isMathFieldFocused !== this.state.isMathFieldFocused && !this.state.isMathFieldFocused) {
             const mathField = this.mathFieldRef.current;
         if (mathField) {
             mathField.executeCommand('hideVirtualKeyboard');
             console.log("componentDidUpdate hide keyboard")
         }}
+
+        // Step change (starter code)
+        if (prevProps.step.starterCode !== this.props.step.starterCode) {
+            this.setState({
+                pythonCode: this.props.step.starterCode || ""
+            });
+        }
     }
     
     componentWillUnmount() {
@@ -270,6 +278,18 @@ class ProblemInput extends React.Component {
                             variabilization={variabilization}
                         />
                     )}
+                    {/* MULTIPLE ANSWERS */}
+                    {problemType === "MultipleAnswersQuestion" && (
+                        <MultipleAnswersQuestion
+                            onChange={(values) => this.props.editInput(values)}
+                            choices={this.props.step.choices}
+                            index={index}
+                            {...(use_expanded_view && debug) ? {
+                                defaultValue: correctAnswer   // muss ein Array sein!
+                            } : {}}
+                            variabilization={variabilization}
+    />
+)}
                     {problemType === "GridInput" && (
                         <GridInput
                             onChange={(newVal) => this.props.setInputValState(newVal)}
