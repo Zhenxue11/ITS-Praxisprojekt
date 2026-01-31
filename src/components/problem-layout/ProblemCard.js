@@ -40,12 +40,8 @@ class ProblemCard extends React.Component {
     static contextType = ThemeContext;
 
     constructor(props, context) {
-<<<<<<< Updated upstream
         super(props);
         //console.log("problem lesson props:", props);
-=======
-        super (props);
->>>>>>> Stashed changes
 
         this.translate = props.translate
         this.step = props.step;
@@ -69,8 +65,6 @@ class ProblemCard extends React.Component {
         this.prompt_template = props.prompt_template
             ? props.prompt_template
             : DYNAMIC_HINT_TEMPLATE;
-<<<<<<< Updated upstream
-=======
 
             this.state = {
     inputVal: "",
@@ -96,7 +90,6 @@ class ProblemCard extends React.Component {
     showHintsPopup: false,
   };
 
->>>>>>> Stashed changes
         console.debug(
             "this.step",
             this.step,
@@ -161,7 +154,6 @@ class ProblemCard extends React.Component {
             });
         }
 
-<<<<<<< Updated upstream
         this.state = {
             inputVal: "",
             isCorrect: context.use_expanded_view && context.debug ? true : null,
@@ -180,9 +172,7 @@ class ProblemCard extends React.Component {
             isGeneratingHint: false, 
             lastAIHintHash: null,
         };
-=======
        
->>>>>>> Stashed changes
 
          // This is used for AI hint generation
          if (this.giveDynamicHint) {
@@ -260,12 +250,9 @@ class ProblemCard extends React.Component {
     }
 
     submit = () => {
-<<<<<<< Updated upstream
         console.debug("submitting problem");
-=======
         if (this.state.isSubmitting) return;          
         this.setState({ isSubmitting: true });
->>>>>>> Stashed changes
         const { inputVal, hintsFinished } = this.state;
         const {
             variabilization,
@@ -659,10 +646,8 @@ class ProblemCard extends React.Component {
             this.state.bioInfo
         );
     };
-<<<<<<< Updated upstream
         
 
-=======
     
     handleAnswerButton = ()=>{
         this.setState({
@@ -680,7 +665,6 @@ class ProblemCard extends React.Component {
         showHintsPopup: !prevState.showHintsPopup,
     }));
 };
->>>>>>> Stashed changes
     render() {
         const { translate } = this.props;
         const { classes, problemID, problemVars, seed } = this.props;
@@ -693,7 +677,6 @@ class ProblemCard extends React.Component {
             <Card className={classes.card}>
                 <CardContent>
                     <h2 className={classes.stepHeader}>
-<<<<<<< Updated upstream
                         {renderText(
                             this.step.stepTitle,
                             problemID,
@@ -707,7 +690,6 @@ class ProblemCard extends React.Component {
                             ),
                             this.context
                         )}
-=======
                         <div style={{
                             display: "flex",
                             justifyContent: "space-between",
@@ -770,7 +752,6 @@ class ProblemCard extends React.Component {
                      </div>
                 </Popup>
                         </div>
->>>>>>> Stashed changes
                         <hr />
                     </h2>
 
