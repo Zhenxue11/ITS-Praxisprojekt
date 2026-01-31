@@ -40,8 +40,12 @@ class ProblemCard extends React.Component {
     static contextType = ThemeContext;
 
     constructor(props, context) {
+<<<<<<< Updated upstream
         super(props);
         //console.log("problem lesson props:", props);
+=======
+        super (props);
+>>>>>>> Stashed changes
 
         this.translate = props.translate
         this.step = props.step;
@@ -65,6 +69,34 @@ class ProblemCard extends React.Component {
         this.prompt_template = props.prompt_template
             ? props.prompt_template
             : DYNAMIC_HINT_TEMPLATE;
+<<<<<<< Updated upstream
+=======
+
+            this.state = {
+    inputVal: "",
+    isCorrect: context.use_expanded_view && context.debug ? true : null,
+    checkMarkOpacity:
+      context.use_expanded_view && context.debug ? "100" : "0",
+    displayHints: false,
+    hintsFinished: [],
+    equation: "",
+    usedHints: false,
+    dynamicHint: "",
+    bioInfo: "",
+    enableHintGeneration: true,
+    activeHintType: "none",
+    isGeneratingHint: false,
+    lastAIHintHash: null,
+    answerButon: false,
+    showPopup: false,
+
+    
+    failedAttempts: 0,
+    isSubmitting: false,
+    showHintsPopup: false,
+  };
+
+>>>>>>> Stashed changes
         console.debug(
             "this.step",
             this.step,
@@ -129,6 +161,7 @@ class ProblemCard extends React.Component {
             });
         }
 
+<<<<<<< Updated upstream
         this.state = {
             inputVal: "",
             isCorrect: context.use_expanded_view && context.debug ? true : null,
@@ -147,6 +180,9 @@ class ProblemCard extends React.Component {
             isGeneratingHint: false, 
             lastAIHintHash: null,
         };
+=======
+       
+>>>>>>> Stashed changes
 
          // This is used for AI hint generation
          if (this.giveDynamicHint) {
@@ -160,6 +196,9 @@ class ProblemCard extends React.Component {
         
             this.hints.unshift(gptHint);
         }
+        this.state.hints = this.hints;
+        this.state.hintsFinished = new Array(this.hints.length).fill(0);
+
     }
 
     hashAnswer = (answer) => {
@@ -221,7 +260,12 @@ class ProblemCard extends React.Component {
     }
 
     submit = () => {
+<<<<<<< Updated upstream
         console.debug("submitting problem");
+=======
+        if (this.state.isSubmitting) return;          
+        this.setState({ isSubmitting: true });
+>>>>>>> Stashed changes
         const { inputVal, hintsFinished } = this.state;
         const {
             variabilization,
@@ -235,8 +279,9 @@ class ProblemCard extends React.Component {
         const { seed, problemVars, problemID, courseName, answerMade, lesson } =
             this.props;
 
-        if (inputVal == '') {
-            toastNotifyEmpty(this.translate)
+        if (inputVal === "") {
+            toastNotifyEmpty(this.translate);
+            this.setState({ isSubmitting: false });
             return;
         }
 
@@ -279,9 +324,16 @@ class ProblemCard extends React.Component {
             toastNotifyCompletion(this.translate);
         }
 
-        this.setState({
-            isCorrect,
-            checkMarkOpacity: isCorrect ? "100" : "0",
+        this.setState((prev) => {
+            const nextFailed = isCorrect ? 0 : prev.failedAttempts + 1;
+
+            return {
+                isCorrect,
+                checkMarkOpacity: isCorrect ? "100" : "0",
+                failedAttempts: nextFailed,
+                showHintsPopup: !isCorrect && nextFailed >= 2, 
+                isSubmitting: false,                           
+            };
         });
         answerMade(this.index, knowledgeComponents, isCorrect);
     };
@@ -607,8 +659,28 @@ class ProblemCard extends React.Component {
             this.state.bioInfo
         );
     };
+<<<<<<< Updated upstream
         
 
+=======
+    
+    handleAnswerButton = ()=>{
+        this.setState({
+            showPopup: true,
+        })
+    }
+    togglePopup = () => {
+        console.log("Toggling popup visibility");
+        this.setState((prevState) => ({
+          showPopup: !prevState.showPopup,
+        }));
+    };
+    toggleHintsPopup = () => {
+    this.setState((prevState) => ({
+        showHintsPopup: !prevState.showHintsPopup,
+    }));
+};
+>>>>>>> Stashed changes
     render() {
         const { translate } = this.props;
         const { classes, problemID, problemVars, seed } = this.props;
@@ -621,6 +693,7 @@ class ProblemCard extends React.Component {
             <Card className={classes.card}>
                 <CardContent>
                     <h2 className={classes.stepHeader}>
+<<<<<<< Updated upstream
                         {renderText(
                             this.step.stepTitle,
                             problemID,
@@ -634,6 +707,70 @@ class ProblemCard extends React.Component {
                             ),
                             this.context
                         )}
+=======
+                        <div style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            width: "100%",
+                        }}>
+                            <span>
+                                {renderText(
+                                    this.step.stepTitle,
+                                    problemID,
+                                    chooseVariables(
+                                        Object.assign(
+                                            {},
+                                            problemVars,
+                                            this.step.variabilization
+                                        ),
+                                        seed
+                                    ),
+                                    this.context 
+                                )} 
+                            </span>
+                            {this.state.answerButon && (
+                                <button 
+                                    onClick={this.handleAnswerButton}
+                                    style={{
+                                        backgroundColor: "#4CAF50",
+                                        color: "white",
+                                        border: "none",
+                                        padding: "8px 16px",
+                                        borderRadius: "6px",
+                                        cursor: "pointer",
+                                        fontSize: "14px",
+                                        transition: "0.2s",
+                                    }}
+                                >
+                                    Answer
+                                </button>
+                            )}
+                            
+                <Popup isOpen={showPopup} onClose={this.togglePopup}>
+                    <AnswerPopUp answerText= {this.step.stepAnswer}/>
+                </Popup>
+                <Popup
+                    isOpen={this.state.showHintsPopup}
+                    onClose={this.toggleHintsPopup}>
+                    <div style={{ padding: 16 }}>
+                        <h3> advice</h3>
+                        <p>
+                        You got it wrong twice. Use the hints to help yourself. 
+                        </p>
+                        <Button
+                            size="small"
+                            onClick={() => {
+                                this.toggleHints();         
+                                this.setState({ showHintsPopup: false });
+                            }}
+                        >  
+                            Open hints
+                        </Button>
+                     </div>
+                </Popup>
+                        </div>
+>>>>>>> Stashed changes
                         <hr />
                     </h2>
 
@@ -763,7 +900,8 @@ class ProblemCard extends React.Component {
                                     onClick={this.submit}
                                     disabled={
                                         (use_expanded_view && debug) ||
-                                        (!this.allowRetry && problemAttempted)
+                                        (!this.allowRetry && problemAttempted) ||
+                                        this.state.isSubmitting
                                     }
                                     {...stagingProp({
                                         "data-selenium-target": `submit-button-${this.props.index}`,
