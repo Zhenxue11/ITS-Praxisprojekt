@@ -300,6 +300,47 @@ class ProblemCard extends React.Component {
         });
     };
 
+    editMultipleInput = (event) => {
+        let inputVal = this.state.inputVal;
+
+        // Step 1: Normalize inputVal
+        if (!inputVal || inputVal === "") {
+            // If empty string or null, make it empty array
+            inputVal = [];
+        } else if (typeof inputVal === "string") {
+            // If it's a string like "[item1, item2]", parse it
+            try {
+                inputVal = JSON.parse(inputVal);
+                if (!Array.isArray(inputVal)) {
+                    // Safety: if parsed value isn't array, fallback to empty array
+                    inputVal = [];
+                }
+            } catch (e) {
+                // If parsing fails, fallback to empty array
+                inputVal = [];
+            }
+        }
+
+        const value = event.target.value;
+
+        // Step 2: Toggle value in the array
+        if (inputVal.includes(value)) {
+            // Remove if exists
+            inputVal = inputVal.filter(item => item !== value);
+        } else {
+            // Add if not exists
+            inputVal.push(value);
+        }
+
+        // Step 3: Save back as JSON string
+        this.setInputValState(JSON.stringify(inputVal));
+
+        console.log("Updated inputVal array:", inputVal);
+        console.log("Stored as string:", JSON.stringify(inputVal), this.state);
+    };
+
+
+
     setInputValState = (inputVal) => {
         this.setState(({ isCorrect }) => ({
             inputVal,
@@ -743,6 +784,7 @@ class ProblemCard extends React.Component {
                             _setState={(state) => this.setState(state)}
                             context={this.context}
                             editInput={this.editInput}
+                            editMultipleInput={this.editMultipleInput}
                             setInputValState={this.setInputValState}
                             handleKey={this.handleKey}
                             index={this.props.index}

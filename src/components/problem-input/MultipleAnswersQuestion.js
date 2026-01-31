@@ -22,7 +22,6 @@ class MultipleAnswersQuestion extends React.Component {
       const values = checked
         ? [...prevState.values, value]
         : prevState.values.filter(v => v !== value);
-
       return { values };
     });
 

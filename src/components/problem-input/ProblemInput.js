@@ -281,7 +281,7 @@ class ProblemInput extends React.Component {
                     {/* MULTIPLE ANSWERS */}
                     {problemType === "MultipleAnswersQuestion" && (
                         <MultipleAnswersQuestion
-                            onChange={(values) => this.props.editInput(values)}
+                            onChange={(evt) => this.props.editMultipleInput(evt)}
                             choices={this.props.step.choices}
                             index={index}
                             {...(use_expanded_view && debug) ? {
