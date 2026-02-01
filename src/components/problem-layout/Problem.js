@@ -35,7 +35,6 @@ import { cleanArray } from "../../util/cleanObject";
 import Popup from '../Popup/Popup.js';
 import About from '../../pages/Posts/About.js';
 import CheatSheet from "../../pages/Posts/Cheatsheet.js";
-
 class Problem extends React.Component {
     static defaultProps = {
         autoScroll: true
@@ -365,7 +364,7 @@ class Problem extends React.Component {
 
         try {
             // Dynamic import based on lesson.id
-            const cheatSheet = await import(`../../content-sources/oatutor/cheatSheet/${lesson.id}/cheatSheet.json`);
+            const cheatSheet = await import(`../../content-source/oatutor/cheatSheet/${lesson.id}/cheatSheet.json`);
             console.log("Cheat sheet data:", cheatSheet.default);
             this.setState({ 
                 cheatSheetData: cheatSheet.default,
