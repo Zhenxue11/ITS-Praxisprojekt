@@ -1,0 +1,15 @@
+{
+"Functions": {
+"Definition": "def f(): return 5",
+"Parameters": "def square(x): return x * x",
+"DefaultParameters": "def power(x, e=2): return x ** e"
+},
+"Lambda": {
+"Example": "add = lambda x: x + 10"
+},
+"Scope": {
+"Global": "Defined outside functions",
+"Local": "Defined inside functions",
+"Example": "x = 10\n\ndef foo():\n global x\n x = 20"
+}
+}
