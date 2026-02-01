@@ -364,7 +364,7 @@ class Problem extends React.Component {
 
         try {
             // Dynamic import based on lesson.id
-            const cheatSheet = await import(`../../content-source/oatutor/cheatSheet/${lesson.id}/cheatSheet.json`);
+            const cheatSheet = await import(`../../content-sources/oatutor/cheatSheet/${lesson.id}/cheatSheet.json`);
             console.log("Cheat sheet data:", cheatSheet.default);
             this.setState({ 
                 cheatSheetData: cheatSheet.default,
