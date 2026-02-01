@@ -2,6 +2,7 @@ import React, { createRef } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import MultipleChoice from "./MultipleChoice";
+import MultipleAnswersQuestion from "./MultipleAnswersQuestion";
 import GridInput from "./GridInput";
 import MatrixInput from "./MatrixInput";
 import { renderText } from "../../platform-logic/renderText";
@@ -14,6 +15,7 @@ import { stagingProp } from "../../util/addStagingProperty";
 import { parseMatrixTex } from "../../util/parseMatrixTex";
 // add python assembly
 import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.mjs";
+import { loadPyodideOnce } from "./pyodideLoader";
 
 class ProblemInput extends React.Component {
     static contextType = ThemeContext;
@@ -30,17 +32,14 @@ class ProblemInput extends React.Component {
         this.state = {
             value: "",
             isMathFieldFocused: false,
+            pythonCode: props.step.starterCode || "",
+            pythonOutput: "",
+            pyodide: null, 
         };
     }
 
     async componentDidMount() {
         document.addEventListener('click', this.handleClickOutside);
-
-        console.debug('problem', this.props.step, 'seed', this.props.seed)
-        if (this.isMatrixInput()) {
-            console.log('automatically determined matrix input to be the correct problem type')
-        }
-
         try {
             const pyodideModule = await loadPyodide();
             this.setState({ pyodide: pyodideModule });
@@ -48,7 +47,10 @@ class ProblemInput extends React.Component {
         } catch (err) {
             console.error(" Failed to load Pyodide:", err);
         }
-
+        console.debug('problem', this.props.step, 'seed', this.props.seed)
+        if (this.isMatrixInput()) {
+            console.log('automatically determined matrix input to be the correct problem type')
+        }
         const mqDisplayArea = this.equationRef?.current?.querySelector(".mq-editable-field > .mq-root-block")
         if (mqDisplayArea != null) {
             mqDisplayArea.ariaHidden = true
@@ -60,57 +62,60 @@ class ProblemInput extends React.Component {
         }
     }
     runPython = async () => {
-        const { pyodide, pythonCode } = this.state;
-        if (!pyodide) return;
-
-        // 1. Initialize output to empty string
-        let output = ""; 
-
+        const { pythonCode } = this.state;
+        // 8. CRITICAL: Set the Python output as the problem's input value
+        this.props.setInputValState(pythonCode);
         try {
+            // Load Pyodide only if it's not already loaded
+            const pyodide = await loadPyodideOnce();
+            this.setState({ pyodide });  // Set the loaded pyodide to state
+
+            // 1. Initialize output to empty string
+            let output = "";
+
             // 2. Load the StringIO class from the io module (if not already loaded)
-            // This only needs to be run once, but running it here ensures it's available.
             pyodide.runPython("import io, sys");
 
             // 3. Create an in-memory stream object to capture output
             pyodide.runPython("sys.stdout = io.StringIO()");
 
             // 4. Execute the user's Python code
-            // The output of print() will now go into the StringIO buffer
-            const result = pyodide.runPython(`${pythonCode}`); 
-            
+            const result = pyodide.runPython(`${pythonCode}`);
+
             // 5. Retrieve the buffered content from StringIO
             output = pyodide.runPython("sys.stdout.getvalue()");
-            
+
             // 6. Restore sys.stdout (optional but good practice)
             pyodide.runPython("sys.stdout = sys.__stdout__");
 
-            // 7. If the code didn't use print() but returned a value (like "1+1"), 
-            // append the result's string representation.
+            // 7. If the code didn't use print() but returned a value (like "1+1"), append the result's string representation
             if (!output && result !== undefined && result !== null) {
                 output = result.toString();
             }
 
             const finalOutput = output || "(no output)";
-
             this.setState({ pythonOutput: finalOutput });
-            console.log("result", pythonCode)
-            // 8. CRITICAL: Set the Python output as the problem's input value
-            // This prepares the value to be used by ProblemCard's submit function.
-            this.props.setInputValState(pythonCode);
+            console.log("result", pythonCode);
+
         } catch (err) {
-            // If the Python code throws an error (e.g., SyntaxError), 
-            // the traceback will be captured here.
             this.setState({ pythonOutput: err.toString() });
             console.error("Python Execution Error:", err);
         }
     };
-    componentDidUpdate(_, prevState) {
+    componentDidUpdate(prevProps, prevState) {
         if (prevState.isMathFieldFocused !== this.state.isMathFieldFocused && !this.state.isMathFieldFocused) {
             const mathField = this.mathFieldRef.current;
         if (mathField) {
             mathField.executeCommand('hideVirtualKeyboard');
             console.log("componentDidUpdate hide keyboard")
         }}
+
+        // Step change (starter code)
+        if (prevProps.step.starterCode !== this.props.step.starterCode) {
+            this.setState({
+                pythonCode: this.props.step.starterCode || ""
+            });
+        }
     }
     
     componentWillUnmount() {
@@ -139,6 +144,7 @@ class ProblemInput extends React.Component {
     };
 
     isMatrixInput() {
+        console.log(this.props.step.stepAnswer,"checkkkk")
         if (this.props.step?.stepAnswer) {
             return this.props.step?.problemType !== "MultipleChoice" &&
                 /\\begin{[a-zA-Z]?matrix}/.test(this.props.step.stepAnswer[0])
@@ -172,7 +178,7 @@ class ProblemInput extends React.Component {
         }
         this.props.setInputValState(eq)
     }
-
+    
     render() {
         const { classes, state, index, showCorrectness, allowRetry, variabilization } = this.props;
         const { use_expanded_view, debug } = this.context;
@@ -272,6 +278,18 @@ class ProblemInput extends React.Component {
                             variabilization={variabilization}
                         />
                     )}
+                    {/* MULTIPLE ANSWERS */}
+                    {problemType === "MultipleAnswersQuestion" && (
+                        <MultipleAnswersQuestion
+                            onChange={(evt) => this.props.editMultipleInput(evt)}
+                            choices={this.props.step.choices}
+                            index={index}
+                            {...(use_expanded_view && debug) ? {
+                                defaultValue: correctAnswer   // muss ein Array sein!
+                            } : {}}
+                            variabilization={variabilization}
+    />
+)}
                     {problemType === "GridInput" && (
                         <GridInput
                             onChange={(newVal) => this.props.setInputValState(newVal)}
@@ -298,50 +316,48 @@ class ProblemInput extends React.Component {
                             } : {}}
                         />
                     )}
-                    {problemType === "pythonInput" && (
+                    {this.props.step.problemType === "pythonInput" && (
                         <div style={{ marginTop: "1rem" }}>
                             <TextField
-                            label="Python Code"
-                            multiline
-                            fullWidth
-                            rows={6}
-                            value={this.state.pythonCode}
-                            onChange={(e) => this.setState({ pythonCode: e.target.value })}
-                            variant="outlined"
-                            inputProps={{ style: { fontFamily: "monospace" } }}
+                                label="Python Code"
+                                multiline
+                                fullWidth
+                                rows={6}
+                                value={this.state.pythonCode}
+                                onChange={(e) => this.setState({ pythonCode: e.target.value })}
+                                variant="outlined"
+                                inputProps={{ style: { fontFamily: "monospace" } }}
                             />
                             <button
-                            onClick={this.runPython}
-                            disabled={!this.state.pyodide}
-                            style={{
-                                marginTop: "10px",
-                                background: "#1976d2",
-                                color: "white",
-                                padding: "8px 16px",
-                                border: "none",
-                                borderRadius: "4px",
-                                cursor: this.state.pyodide ? "pointer" : "not-allowed"
-                            }}
+                                onClick={this.runPython}
+                                style={{
+                                    marginTop: "10px",
+                                    background: "#1976d2",
+                                    color: "white",
+                                    padding: "8px 16px",
+                                    border: "none",
+                                    borderRadius: "4px",
+                                    cursor: this.state.pyodide ? "pointer" : "not-allowed"
+                                }}
                             >
-                            {this.state.pyodide ? "Run Python" : "Loading..."}
+                                Run Python
                             </button>
 
                             <pre
-                            style={{
-                                background: "#f5f5f5",
-                                borderRadius: "6px",
-                                padding: "10px",
-                                marginTop: "10px",
-                                minHeight: "50px",
-                                fontFamily: "monospace",
-                                whiteSpace: "pre-wrap"
-                            }}
+                                style={{
+                                    background: "#f5f5f5",
+                                    borderRadius: "6px",
+                                    padding: "10px",
+                                    marginTop: "10px",
+                                    minHeight: "50px",
+                                    fontFamily: "monospace",
+                                    whiteSpace: "pre-wrap"
+                                }}
                             >
-                            {this.state.pythonOutput || "Output will appear here..."}
+                                {this.state.pythonOutput || "Output will appear here..."}
                             </pre>
                         </div>
                     )}
-
                 </Grid>
                 <Grid item xs={2} md={1}>
                     <div style={{ marginLeft: "20%" }}>

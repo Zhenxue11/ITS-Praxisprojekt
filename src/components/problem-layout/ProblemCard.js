@@ -35,13 +35,15 @@ import {
 import { joinList } from "../../util/formListString";
 import withTranslation from "../../util/withTranslation.js"
 import CryptoJS from "crypto-js";
+import { Tooltip } from "@material-ui/core";
+import AnswerPopUp from "../../pages/Posts/AnswerPopUp.js";
+import Popup from '../Popup/Popup.js';
 
 class ProblemCard extends React.Component {
     static contextType = ThemeContext;
 
     constructor(props, context) {
         super(props);
-        //console.log("problem lesson props:", props);
 
         this.translate = props.translate
         this.step = props.step;
@@ -53,7 +55,7 @@ class ProblemCard extends React.Component {
         this.keepMCOrder = props.keepMCOrder;
         this.keyboardType = props.keyboardType;
         this.allowRetry = this.giveStuFeedback;
-
+        this.hintAllowed = props.hintAllowed;
         this.giveStuBottomHint = props.giveStuBottomHint;
         this.giveDynamicHint = props.giveDynamicHint;
         this.showHints = this.giveStuHints == null || this.giveStuHints;
@@ -66,30 +68,6 @@ class ProblemCard extends React.Component {
             ? props.prompt_template
             : DYNAMIC_HINT_TEMPLATE;
 
-            this.state = {
-    inputVal: "",
-    isCorrect: context.use_expanded_view && context.debug ? true : null,
-    checkMarkOpacity:
-      context.use_expanded_view && context.debug ? "100" : "0",
-    displayHints: false,
-    hintsFinished: [],
-    equation: "",
-    usedHints: false,
-    dynamicHint: "",
-    bioInfo: "",
-    enableHintGeneration: true,
-    activeHintType: "none",
-    isGeneratingHint: false,
-    lastAIHintHash: null,
-    answerButon: false,
-    showPopup: false,
-
-    
-    failedAttempts: 0,
-    isSubmitting: false,
-    showHintsPopup: false,
-  };
-
         console.debug(
             "this.step",
             this.step,
@@ -101,7 +79,6 @@ class ProblemCard extends React.Component {
         this.hints = this.giveDynamicHint
             ? []
             : JSON.parse(JSON.stringify(this.step.hints[context.hintPathway]));
-
         for (let hint of this.hints) {
             hint.dependencies = hint.dependencies.map((dependency) =>
                 this._findHintId(this.hints, dependency)
@@ -121,14 +98,14 @@ class ProblemCard extends React.Component {
             this.giveStuBottomHint &&
             !(context.debug && context["use_expanded_view"])
         ) {
-            // Bottom out hints
-            this.hints.push({
-                id: this.step.id + "-h" + (this.hints.length + 1),
-                title: this.translate('hintsystem.answer'),
-                text: this.translate('hintsystem.answerIs') + this.step.stepAnswer,
-                type: "bottomOut",
-                dependencies: Array.from(Array(this.hints.length).keys()),
-            });
+            // // Bottom out hints
+            // this.hints.push({
+            //     id: this.step.id + "-h" + (this.hints.length + 1),
+            //     title: this.translate('hintsystem.answer'),
+            //     text: this.translate('hintsystem.answerIs') + this.step.stepAnswer,
+            //     type: "bottomOut",
+            //     dependencies: Array.from(Array(this.hints.length).keys()),
+            // });
             // Bottom out sub hints
             this.hints.map((hint, i) => {
                 if (hint.type === "scaffold") {
@@ -171,6 +148,8 @@ class ProblemCard extends React.Component {
             // When we are currently streaming the response from ChatGPT, this variable is `true`
             isGeneratingHint: false, 
             lastAIHintHash: null,
+            answerButon:false,
+            showPopup: false,
         };
        
 
@@ -250,9 +229,6 @@ class ProblemCard extends React.Component {
     }
 
     submit = () => {
-        console.debug("submitting problem");
-        if (this.state.isSubmitting) return;          
-        this.setState({ isSubmitting: true });
         const { inputVal, hintsFinished } = this.state;
         const {
             variabilization,
@@ -266,9 +242,8 @@ class ProblemCard extends React.Component {
         const { seed, problemVars, problemID, courseName, answerMade, lesson } =
             this.props;
 
-        if (inputVal === "") {
-            toastNotifyEmpty(this.translate);
-            this.setState({ isSubmitting: false });
+        if (inputVal === '') {
+            toastNotifyEmpty(this.translate)
             return;
         }
 
@@ -283,7 +258,6 @@ class ProblemCard extends React.Component {
             ),
             questionText: stepBody.trim() || stepTitle.trim(),
         });
-        console.log(inputVal, stepAnswer,"result")
         const isCorrect = !!correctAnswer;
 
         this.context.firebase.log(
@@ -323,6 +297,11 @@ class ProblemCard extends React.Component {
             };
         });
         answerMade(this.index, knowledgeComponents, isCorrect);
+        if (this.state.hintsFinished.every(v => v === 1) && !isCorrect) {
+            this.setState({
+                answerButon: true
+            })
+        }
     };
 
     editInput = (event) => {
@@ -331,6 +310,47 @@ class ProblemCard extends React.Component {
             enableHintGeneration: true,
         });
     };
+
+    editMultipleInput = (event) => {
+        let inputVal = this.state.inputVal;
+
+        // Step 1: Normalize inputVal
+        if (!inputVal || inputVal === "") {
+            // If empty string or null, make it empty array
+            inputVal = [];
+        } else if (typeof inputVal === "string") {
+            // If it's a string like "[item1, item2]", parse it
+            try {
+                inputVal = JSON.parse(inputVal);
+                if (!Array.isArray(inputVal)) {
+                    // Safety: if parsed value isn't array, fallback to empty array
+                    inputVal = [];
+                }
+            } catch (e) {
+                // If parsing fails, fallback to empty array
+                inputVal = [];
+            }
+        }
+
+        const value = event.target.value;
+
+        // Step 2: Toggle value in the array
+        if (inputVal.includes(value)) {
+            // Remove if exists
+            inputVal = inputVal.filter(item => item !== value);
+        } else {
+            // Add if not exists
+            inputVal.push(value);
+        }
+
+        // Step 3: Save back as JSON string
+        this.setInputValState(JSON.stringify(inputVal));
+
+        console.log("Updated inputVal array:", inputVal);
+        console.log("Stored as string:", JSON.stringify(inputVal), this.state);
+    };
+
+
 
     setInputValState = (inputVal) => {
         this.setState(({ isCorrect }) => ({
@@ -346,26 +366,30 @@ class ProblemCard extends React.Component {
     };
 
     toggleHints = (event) => {
-        if (this.giveDynamicHint && !this.state.activeHintType !== "normal") {
-            this.generateHintFromGPT();
-        } else if (!this.state.displayHints) {
-            this.setState(
-                () => ({
-                    enableHintGeneration: false,
-            }))
-        }
-        this.setState(
-            (prevState) => ({
-                activeHintType: prevState.activeHintType === "normal" ? "none" : "normal"
-                }),
-            () => {
-                this.props.answerMade(
-                    this.index,
-                    this.step.knowledgeComponents,
-                    false
-                );
+        if(this.props.hintAllowed){
+            if (this.giveDynamicHint && !this.state.activeHintType !== "normal") {
+                this.generateHintFromGPT();
+            } else if (!this.state.displayHints) {
+                this.setState(
+                    () => ({
+                        enableHintGeneration: false,
+                }))
             }
-        );
+            this.setState(
+                (prevState) => ({
+                    activeHintType: prevState.activeHintType === "normal" ? "none" : "normal"
+                    }),
+                () => {
+                    this.props.answerMade(
+                        this.index,
+                        this.step.knowledgeComponents,
+                        false
+                    );
+                }
+            );
+        }else{
+
+        }
     };
 
     unlockHint = (hintNum, hintType) => {
@@ -379,9 +403,9 @@ class ProblemCard extends React.Component {
             this.setState({ usedHints: true });
             answerMade(this.index, knowledgeComponents, false);
         }
-
         // If the user has not opened a scaffold before, mark it as in-progress.
         if (hintsFinished[hintNum] !== 1) {
+
             this.setState(
                 (prevState) => {
                     prevState.hintsFinished[hintNum] =
@@ -646,8 +670,6 @@ class ProblemCard extends React.Component {
             this.state.bioInfo
         );
     };
-        
-
     
     handleAnswerButton = ()=>{
         this.setState({
@@ -660,36 +682,18 @@ class ProblemCard extends React.Component {
           showPopup: !prevState.showPopup,
         }));
     };
-    toggleHintsPopup = () => {
-    this.setState((prevState) => ({
-        showHintsPopup: !prevState.showHintsPopup,
-    }));
-};
     render() {
         const { translate } = this.props;
         const { classes, problemID, problemVars, seed } = this.props;
         const { isCorrect } = this.state;
         const { debug, use_expanded_view } = this.context;
-
+        const {showPopup} = this.state;
         const problemAttempted = isCorrect != null;
 
         return (
             <Card className={classes.card}>
                 <CardContent>
                     <h2 className={classes.stepHeader}>
-                        {renderText(
-                            this.step.stepTitle,
-                            problemID,
-                            chooseVariables(
-                                Object.assign(
-                                    {},
-                                    problemVars,
-                                    this.step.variabilization
-                                ),
-                                seed
-                            ),
-                            this.context
-                        )}
                         <div style={{
                             display: "flex",
                             justifyContent: "space-between",
@@ -711,50 +715,11 @@ class ProblemCard extends React.Component {
                                     this.context 
                                 )} 
                             </span>
-                            {this.state.answerButon && (
-                                <button 
-                                    onClick={this.handleAnswerButton}
-                                    style={{
-                                        backgroundColor: "#4CAF50",
-                                        color: "white",
-                                        border: "none",
-                                        padding: "8px 16px",
-                                        borderRadius: "6px",
-                                        cursor: "pointer",
-                                        fontSize: "14px",
-                                        transition: "0.2s",
-                                    }}
-                                >
-                                    Answer
-                                </button>
-                            )}
-                            
-                <Popup isOpen={showPopup} onClose={this.togglePopup}>
-                    <AnswerPopUp answerText= {this.step.stepAnswer}/>
-                </Popup>
-                <Popup
-                    isOpen={this.state.showHintsPopup}
-                    onClose={this.toggleHintsPopup}>
-                    <div style={{ padding: 16 }}>
-                        <h3> advice</h3>
-                        <p>
-                        You got it wrong twice. Use the hints to help yourself. 
-                        </p>
-                        <Button
-                            size="small"
-                            onClick={() => {
-                                this.toggleHints();         
-                                this.setState({ showHintsPopup: false });
-                            }}
-                        >  
-                            Open hints
-                        </Button>
-                     </div>
-                </Popup>
+                           
                         </div>
                         <hr />
                     </h2>
-
+                        
                     <div className={classes.stepBody}>
                         {renderText(
                             this.step.stepBody,
@@ -830,6 +795,7 @@ class ProblemCard extends React.Component {
                             _setState={(state) => this.setState(state)}
                             context={this.context}
                             editInput={this.editInput}
+                            editMultipleInput={this.editMultipleInput}
                             setInputValState={this.setInputValState}
                             handleKey={this.handleKey}
                             index={this.props.index}
@@ -847,28 +813,46 @@ class ProblemCard extends React.Component {
                         <Grid item xs={4} sm={4} md={1}>
                             {this.showHints && (
                                 <center>
-                                    <IconButton
-                                        aria-label="delete"
-                                        onClick={this.toggleHints}
-                                        title="View available hints"
-                                        disabled={
-                                            !this.state.enableHintGeneration
+                                    <Tooltip
+                                        title={
+                                            !this.props.hintAllowed ? (
+                                                <span style={{ fontSize: "25px" }}>
+                                                    Please Open Syntax Guide
+                                                </span>
+                                            ) : ""
                                         }
-                                        className="image-container"
-                                        {...stagingProp({
-                                            "data-selenium-target": `hint-button-${this.props.index}`,
-                                        })}
+                                        style={{
+                                            opacity: this.props.hintAllowed ? 1 : 0.3,
+                                            cursor: !this.props.hintAllowed ? "not-allowed" : "auto"
+                                        }}
                                     >
-                                        <img
-                                            src={`${process.env.PUBLIC_URL}/static/images/icons/raise_hand.png`}
-                                            className={
-                                                this.state.enableHintGeneration
-                                                    ? "image"
-                                                    : "image image-grayed-out"
-                                            }
-                                            alt="hintToggle"
-                                        />
-                                    </IconButton>
+                                        
+                                        <span> 
+                                            <IconButton
+                                                aria-label="syntax guide"
+                                                onClick={this.props.hintAllowed ? this.toggleHints : null}
+                                                disabled={!this.props.hintAllowed}
+                                                className="image-container"
+                                                {...stagingProp({
+                                                    "data-selenium-target": `hint-button-${this.props.index}`,
+                                                })}
+                                            >
+                                                
+                                                <img
+                                                    src={`${process.env.PUBLIC_URL}/static/images/icons/raise_hand.png`}
+                                                    className={
+                                                        this.state.enableHintGeneration
+                                                            ? "image"
+                                                            : "image image-grayed-out"
+                                                    }
+                                                    style={{
+                                                        opacity: this.props.hintAllowed ? 1 : 0.3,
+                                                    }}
+                                                    alt="hintToggle"
+                                                />
+                                            </IconButton>
+                                        </span>
+                                    </Tooltip>
                                 </center>
                             )}
                         </Grid>
@@ -891,6 +875,30 @@ class ProblemCard extends React.Component {
                                     {translate('problem.Submit')}
                                 </Button>
                             </center>
+                        </Grid>
+                        <Grid item xs={4} sm={4} md={2}>
+                            <center>
+                            {this.state.answerButon && (
+                                <button 
+                                    onClick={this.handleAnswerButton}
+                                    style={{
+                                        backgroundColor: "#4CAF50",
+                                        color: "white",
+                                        border: "none",
+                                        padding: "8px 16px",
+                                        borderRadius: "6px",
+                                        cursor: "pointer",
+                                        fontSize: "14px",
+                                        transition: "0.2s",
+                                    }}
+                                >
+                                    Answer
+                                </button>
+                            )}
+                            </center>
+                            <Popup isOpen={showPopup} onClose={this.togglePopup}>
+                                <AnswerPopUp answerText= {this.step.stepAnswer}/>
+                            </Popup>
                         </Grid>
                         <Grid item xs={4} sm={3} md={1}>
                             <div

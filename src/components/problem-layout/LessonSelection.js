@@ -17,6 +17,7 @@ import withTranslation from "../../util/withTranslation.js";
 import Popup from '../Popup/Popup.js';
 import About from '../../pages/Posts/About.js';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 class LessonSelection extends React.Component {
     static contextType = ThemeContext;
@@ -25,11 +26,11 @@ class LessonSelection extends React.Component {
         super(props);
         const { courseNum, setLanguage } = this.props;
 
-        if (courseNum == 6) {
+        if (courseNum === 6) {
             setLanguage('se')
         } 
         
-        if (props.history.location.pathname == '/') {
+        if (props.history.location.pathname === '/') {
             const defaultLocale = localStorage.getItem('defaultLocale');
             setLanguage(defaultLocale)
         }
@@ -45,7 +46,28 @@ class LessonSelection extends React.Component {
             removedProgress: false,
             showPopup: false
         }
+        console.log("test", this)
     }
+    getLessonMastery = (lesson) => {
+        const { bktParams } = this.context;
+        console.log("lesson", bktParams)
+        if (!bktParams || !lesson.learningObjectives) return null;
+
+        const skills = Object.keys(lesson.learningObjectives);
+        if (!skills.length) return null;
+
+        let sum = 0;
+        let count = 0;
+
+        for (const skill of skills) {
+            if (bktParams[skill]) {
+                sum += bktParams[skill].probMastery;
+                count++;
+            }
+        }
+
+        return count ? sum / count : null;
+    };
 
     togglePopup = () => {
         console.log("Toggling popup visibility");
@@ -133,6 +155,54 @@ class LessonSelection extends React.Component {
                                             <Grid item xs={12} sm={6} md={4} key={i}>
     <center>
       <Paper className={classes.paper} style={{ position: 'relative' }}>
+        {(() => {
+            const mastery = this.getLessonMastery(lesson);
+            if (mastery == null) return null;
+
+            const percent = Math.round(mastery * 100);
+
+            return (
+                <div
+                style={{
+                    position: "absolute",
+                    top: 10,
+                    left: 10,
+                    width: 48,
+                    height: 48,
+                }}
+                >
+                <CircularProgress
+                    variant="determinate"
+                    value={percent}
+                    size={48}
+                    thickness={5}
+                    style={{
+                    color:
+                        percent >= 80 ? "#4caf50" :
+                        percent >= 50 ? "#ff9800" :
+                        "#f44336",
+                    }}
+                />
+                <div
+                    style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 12,
+                    fontWeight: 600,
+                    }}
+                >
+                    {percent}%
+                </div>
+                </div>
+            );
+        })()}
+
         {/* top-right “view all problems” button */}
         <IconButton
           size="small"

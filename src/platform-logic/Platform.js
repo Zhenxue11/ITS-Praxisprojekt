@@ -73,10 +73,12 @@ class Platform extends React.Component {
         }
 
         this.selectLesson = this.selectLesson.bind(this);
+        console.log(this,"hello")
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this._isMounted = true;
+        await this.props.loadBktProgress();
         if (this.props.lessonID != null) {
             console.log("calling selectLesson from componentDidMount...") 
             const lesson = findLessonById(this.props.lessonID)
@@ -91,7 +93,7 @@ class Platform extends React.Component {
             );
 
             const { setLanguage } = this.props;
-            if (lesson.courseName == 'Matematik 4') {
+            if (lesson.courseName === 'Matematik 4') {
                 setLanguage('se')
             } else {
                 const defaultLocale = localStorage.getItem('defaultLocale');

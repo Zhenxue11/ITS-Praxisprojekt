@@ -3,6 +3,7 @@ import insert from "../util/strInsert";
 import { parseMatrixTex } from "../util/parseMatrixTex";
 import { IS_DEVELOPMENT, IS_STAGING_OR_DEVELOPMENT } from "../util/getBuildType";
 import WrongAnswerReasons from "../util/wrongAnswerReasons";
+import { act } from 'react';
 
 const KAS = require('../kas.js');
 
@@ -19,6 +20,54 @@ function _equality(attempt, actual) {
         return parsedAttempt === parsedStepAns
     });
 }
+
+function makeArray(attempt) {
+    if (Array.isArray(attempt)) {
+        return attempt;
+    }
+
+    if (typeof attempt === "string" && attempt.trim() !== "") {
+        try {
+            const parsed = JSON.parse(attempt);
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    return [];
+}
+
+function _multipleAnswer(attempt, actual) {
+    attempt = makeArray(attempt);
+    actual = makeArray(actual);
+    // Make sure both are arrays
+    if (!Array.isArray(attempt) || !Array.isArray(actual)) {
+        return false;
+    }
+
+    // Length must be same
+    if (attempt.length !== actual.length) {
+        return false;
+    }
+
+    // Normalize values (trim + remove spaces if needed)
+    const normalize = arr =>
+        arr.map(val =>
+            val
+                .toString()
+                .replace(/\s+/g, '')
+                .replace(/\\left/g, '')
+                .replace(/\\right/g, '')
+        );
+
+    const parsedAttempt = normalize(attempt);
+    const parsedActual = normalize(actual);
+        console.log(parsedAttempt, parsedActual, "correctAnswers")
+    // Check every value exists in actual
+    return parsedAttempt.every(val => parsedActual.includes(val));
+}
+
 
 // attempt = student answer, actual = [ans1, ans2]
 /**
@@ -183,6 +232,16 @@ function checkAnswer({ attempt, actual, answerType, precision = 5, variabilizati
             }
 
             return [parsed, false, WrongAnswerReasons.wrong];
+        } else if (answerType === "multipleAnswersQuestion") {
+            parsed = attempt;
+            const correctAnswers = _multipleAnswer(parsed, actual);
+            if (correctAnswers) {
+                return [parsed, actual, null]
+            }else{
+                return [parsed, false, WrongAnswerReasons.wrong];
+            }
+
+            // return [parsed, false, WrongAnswerReasons.wrong];
         } else {
             // guess it is a number problem
             parsed = +attempt;

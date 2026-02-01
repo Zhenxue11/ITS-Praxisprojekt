@@ -1,0 +1,27 @@
+.answer-title {
+  margin: 0 0 12px 0;
+  font-size: 20px;          /* Larger title font */
+  font-weight: 600;
+  color: #111827;
+  text-align: center;      /* Center title */
+}
+
+.answer {
+  display: flex;
+  justify-content: center;  /* Center content horizontally */
+  align-items: center;      /* Center content vertically */
+  
+  padding: 20px 24px;       /* Increase padding for spacing */
+  
+  background-color: #ffffff;
+  color: #1f2937;
+
+  font-size: 18px;           /* Larger font size for answer text */
+  line-height: 1.6;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+
+  white-space: pre-line;
+  min-height: 100px;         /* To ensure there's some height */
+}
