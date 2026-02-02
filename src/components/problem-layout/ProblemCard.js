@@ -150,7 +150,11 @@ class ProblemCard extends React.Component {
             lastAIHintHash: null,
             answerButon:false,
             showPopup: false,
+            failedAttempts: 0,
+            showAdvicePopup: false,
+            isSubmitting: false,
         };
+
        
 
          // This is used for AI hint generation
@@ -227,7 +231,7 @@ class ProblemCard extends React.Component {
             this.updateBioInfo();
         }
     }
-
+    
     submit = () => {
         const { inputVal, hintsFinished } = this.state;
         const {
@@ -241,7 +245,7 @@ class ProblemCard extends React.Component {
         } = this.step;
         const { seed, problemVars, problemID, courseName, answerMade, lesson } =
             this.props;
-
+        
         if (inputVal === '') {
             toastNotifyEmpty(this.translate)
             return;
@@ -292,8 +296,11 @@ class ProblemCard extends React.Component {
                 isCorrect,
                 checkMarkOpacity: isCorrect ? "100" : "0",
                 failedAttempts: nextFailed,
-                showHintsPopup: !isCorrect && nextFailed >= 2, 
-                isSubmitting: false,                           
+
+                // ✅ open the Advice popup exactly on the 2nd wrong answer
+                showAdvicePopup: !isCorrect && nextFailed === 2,
+
+                isSubmitting: false,
             };
         });
         answerMade(this.index, knowledgeComponents, isCorrect);
@@ -682,12 +689,16 @@ class ProblemCard extends React.Component {
           showPopup: !prevState.showPopup,
         }));
     };
+    closeAdvicePopup = () => {
+    this.setState({ showAdvicePopup: false });
+};
+
     render() {
         const { translate } = this.props;
         const { classes, problemID, problemVars, seed } = this.props;
         const { isCorrect } = this.state;
         const { debug, use_expanded_view } = this.context;
-        const {showPopup} = this.state;
+        const { showPopup, showAdvicePopup } = this.state;
         const problemAttempted = isCorrect != null;
 
         return (
@@ -899,6 +910,15 @@ class ProblemCard extends React.Component {
                             <Popup isOpen={showPopup} onClose={this.togglePopup}>
                                 <AnswerPopUp answerText= {this.step.stepAnswer}/>
                             </Popup>
+                            <Popup isOpen={showAdvicePopup} onClose={this.closeAdvicePopup}>
+                                <div style={{ padding: "10px", maxWidth: "420px" }}>
+                                    <h2 style={{ marginTop: 0 }}>Advice 💡</h2>
+                                    <p style={{ marginBottom: 0 }}>
+                                        You got it wrong twice. Use the hints 🙂📌
+                                    </p>
+                                </div>
+                            </Popup>
+
                         </Grid>
                         <Grid item xs={4} sm={3} md={1}>
                             <div
