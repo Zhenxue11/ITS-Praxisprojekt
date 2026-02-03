@@ -250,7 +250,7 @@ class ProblemCard extends React.Component {
             toastNotifyEmpty(this.translate)
             return;
         }
-
+        console.log("atempt", inputVal, stepAnswer)
         const [parsed, correctAnswer, reason] = checkAnswer({
             attempt: inputVal,
             actual: stepAnswer,

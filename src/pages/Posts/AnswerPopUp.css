@@ -8,6 +8,7 @@
 
 .answer {
   display: flex;
+  flex-direction: column;
   justify-content: center;  /* Center content horizontally */
   align-items: center;      /* Center content vertically */
   
@@ -24,4 +25,8 @@
 
   white-space: pre-line;
   min-height: 100px;         /* To ensure there's some height */
+}
+
+.answer p {
+    margin: 2px 0;  /* space between lines */
 }

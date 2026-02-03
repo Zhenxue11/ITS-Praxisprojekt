@@ -43,13 +43,16 @@ function _multipleAnswer(attempt, actual) {
     actual = makeArray(actual);
     // Make sure both are arrays
     if (!Array.isArray(attempt) || !Array.isArray(actual)) {
+        console.log("atempt2")
         return false;
     }
 
     // Length must be same
     if (attempt.length !== actual.length) {
+        console.log("atempt3")
         return false;
     }
+    console.log(attempt, actual, "atempt1")
 
     // Normalize values (trim + remove spaces if needed)
     const normalize = arr =>

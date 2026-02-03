@@ -144,7 +144,6 @@ class ProblemInput extends React.Component {
     };
 
     isMatrixInput() {
-        console.log(this.props.step.stepAnswer,"checkkkk")
         if (this.props.step?.stepAnswer) {
             return this.props.step?.problemType !== "MultipleChoice" &&
                 /\\begin{[a-zA-Z]?matrix}/.test(this.props.step.stepAnswer[0])
