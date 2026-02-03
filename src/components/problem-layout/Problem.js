@@ -35,7 +35,6 @@ import { cleanArray } from "../../util/cleanObject";
 import Popup from '../Popup/Popup.js';
 import About from '../../pages/Posts/About.js';
 import CheatSheet from "../../pages/Posts/Cheatsheet.js";
-
 class Problem extends React.Component {
     static defaultProps = {
         autoScroll: true

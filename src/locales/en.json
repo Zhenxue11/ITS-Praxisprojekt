@@ -42,6 +42,8 @@
         "simplify": "Please simplify!",
         "cantProcess": "Our system could not process that answer",
         "stepComplete": "Step Completed!",
-        "provideAnswer": "Please provide an answer."
+        "provideAnswer": "Please provide an answer.",
+        "needHint": " Incorrect. Please click the hint button before trying again."
+
     }
 }
