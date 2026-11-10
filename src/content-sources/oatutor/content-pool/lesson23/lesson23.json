@@ -1,0 +1,10 @@
+{
+    "id": "lesson2.3",
+    "title":"Variables -Programming part 2: Update Variables ",
+    "body": "You have the following variable. Update it to store a new value and print it.",
+    "variabilization": {},
+    "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+    "lesson": "Variables",
+    "courseName": "Python-Programming"
+}

@@ -1,0 +1,23 @@
+{
+    "id": "lesson41d",
+    "stepAnswer": [
+        "The list is modified",
+         "The value 2 is replaced",
+         "The list becomes [1, 10, 3]"
+    ],
+    "problemType": "MultipleAnswersQuestion",
+    "stepTitle": "What happens when executing this code?\nSelect all correct statements. ",
+    "stepBody": "lst = [1, 2, 3] \nlst[1] = 10",
+    "answerType": "multipleAnswersQuestion",
+    "variabilization": {},
+    "choices": [
+         "The list is modified",
+         "The value 2 is replaced",
+         "An error occurs",
+         "The list becomes [1, 10, 3]",
+         "Lists cannot be changed"
+    ],
+    "answerLatex": [ "The list is modified",
+         "The value 2 is replaced",
+         "The list becomes [1, 10, 3]"]
+}

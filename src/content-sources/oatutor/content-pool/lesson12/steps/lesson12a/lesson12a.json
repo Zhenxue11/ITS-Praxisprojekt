@@ -1,0 +1,13 @@
+{
+    "id": "lesson12a",
+    "stepAnswer": [
+        "a=42\nprint(a, \"is\", type(a))"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "a = 42",
+    "stepBody": "Print both the value and the type of a",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "a=42\nprint(a, \"is\", type(a))",
+    "starterCode": "a=42"
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson12c-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "The type() function tells you the data type of a variable.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson12c-h2",
+        "type": "hint",
+        "dependencies": ["lesson12c-h1"],
+        "title": "hint-2",
+        "text": "If you want to display text together with a variable and its type, add that text inside the print() function.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson12c-h3",
+        "type": "hint",
+        "dependencies": ["lesson12c-h2"],
+        "title": "hint-3",
+        "text": "A complete example looks like: print(variable, 'is', type(variable)).",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

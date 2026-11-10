@@ -1,0 +1,33 @@
+[
+    {
+        "id": "lesson11d-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Look for the variable whose value looks like text",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+     {
+        "id": "lesson11d-h2",
+        "type": "hint",
+        "dependencies": ["lesson11d-h1"],
+        "title": "hint-2",
+        "text": "In the list, identify the value that is not a number but text between",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson11d-h3",
+        "type": "hint",
+        "dependencies": ["lesson11d-h2"],
+        "title": "hint-3",
+        "text": "Among the four values, only one has  quotation marks: that one is the string",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+    
+]

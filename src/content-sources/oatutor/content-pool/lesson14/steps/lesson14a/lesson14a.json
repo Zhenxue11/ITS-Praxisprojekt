@@ -1,0 +1,12 @@
+{
+    "id": "lesson14a",
+    "stepAnswer": [
+        "x = int(x)\nprint(x)"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "x = \"10\"",
+    "stepBody": "Convert x to an integer and print it",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "x = int(x)\nprint(x)"
+}

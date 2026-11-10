@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson44b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Create an empty set to store the words entered by the user.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson44b-h2",
+        "type": "hint",
+        "dependencies": ["lesson44b-h1"],
+        "title": "hint-2",
+        "text": "Use a loop to repeatedly ask the user for a word and add it to the set.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson44b-h3",
+        "type": "hint",
+        "dependencies": ["lesson44b-h2"],
+        "title": "hint-3",
+        "text": "Print the number of unique words by applying len to the set.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

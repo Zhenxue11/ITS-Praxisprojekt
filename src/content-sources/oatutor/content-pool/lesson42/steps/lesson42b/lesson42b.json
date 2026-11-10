@@ -1,0 +1,13 @@
+{
+    "id": "lesson42b",
+    "stepAnswer": [
+        "a = \"apple\"\nb = \"banana\"\npair = (a, b)\nprint(pair[::-1])"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Store two values in a tuple.\nThen print the tuple in reversed order.",
+    "stepBody": "A starter code is provided below to help you get started. Complete the missing parts with your own code.",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "a = \"apple\"\nb = \"banana\"\npair = (a, b)\nprint(pair[::-1])",
+    "starterCode": "a = \"apple\"\nb = \"banana\"\n# create tuple\n# print reversed tuple"
+}

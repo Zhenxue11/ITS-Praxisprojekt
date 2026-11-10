@@ -1,0 +1,10 @@
+{
+    "id": "lesson12",
+    "title":"Data-type -Programming part 1: What Type Am I? ",
+    "body": "You have some variables below.\nPrint each value and its data type using type().",
+    "variabilization": {},
+    "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+    "lesson": "Data-type",
+    "courseName": "Python-Programming"
+}

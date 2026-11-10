@@ -1,0 +1,13 @@
+{
+    "id": "lesson12c",
+    "stepAnswer": [
+        "c = 2.5\nprint(c, \"is\", type(c))"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "c = 2.5",
+    "stepBody": "Print both the value and the type of c",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "c = 2.5\nprint(c, \"is\", type(c))",
+    "starterCode":"c = 2.5"
+}

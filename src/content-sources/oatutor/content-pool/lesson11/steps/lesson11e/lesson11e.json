@@ -1,0 +1,26 @@
+{
+    "id": "lesson11e",
+    "stepAnswer": [
+        "int",
+         "float",
+         "str",
+         "bool"
+    ],
+    "problemType": "MultipleAnswersQuestion",
+    "stepTitle": "Which of the following are built-in Python data types?\nSelect all that apply. ",
+    "stepBody": "Operators",
+    "answerType": "multipleAnswersQuestion",
+    "variabilization": {},
+    "choices": [
+         "int",
+         "float",
+         "string",
+         "str",
+         "bool"
+    ],
+    "answerLatex": [ "int",
+         "float",
+         "str",
+         "bool"]
+}
+

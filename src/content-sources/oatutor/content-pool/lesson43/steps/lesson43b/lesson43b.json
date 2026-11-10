@@ -1,0 +1,24 @@
+{
+    "id": "lesson43b",
+    "stepAnswer": [
+        "data = {}\ndata[\"name\"] = \"Alice\"\ndata[\"age\"] = 20\nprint(f\"{data['name']} is {data['age']} years old.\")"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Store a name and an age in a dictionary, then print a sentence like:\n\"Alice is 20 years old.\"",
+    "stepBody": "A starter code is provided below to help you get started. Complete the missing parts with your own code.",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "data = {}\ndata[\"name\"] = \"Alice\"\ndata[\"age\"] = 20\nprint(f\"{data['name']} is {data['age']} years old.\")",
+    "starterCode": "data = {}\n# add name and age to the dictionary\n# print formatted output"
+    }
+
+
+
+
+
+
+
+
+
+
+

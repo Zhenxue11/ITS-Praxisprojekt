@@ -1,0 +1,20 @@
+{
+    "id": "lesson43a",
+    "stepAnswer": [
+        "3"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What is printed?",
+    "stepBody": "d = {\"a\": 1, \"b\": 2}\nd[\"c\"] = 3\nprint(len(d))",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "2",
+        "3",
+        "1",
+        "Error"
+    ],
+    "answerLatex": "3"
+}    
+
+

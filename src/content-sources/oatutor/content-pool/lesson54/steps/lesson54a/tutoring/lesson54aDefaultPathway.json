@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson54a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "A lambda function returns the value of the expression written after the colon.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson54a-h2",
+        "type": "hint",
+        "dependencies": ["lesson54a-h1"],
+        "title": "hint-2",
+        "text": "The lambda expression adds 3 to the input value.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson54a-h3",
+        "type": "hint",
+        "dependencies": ["lesson54a-h2"],
+        "title": "hint-3",
+        "text": "Calling the lambda with 2 evaluates the expression and returns the result.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

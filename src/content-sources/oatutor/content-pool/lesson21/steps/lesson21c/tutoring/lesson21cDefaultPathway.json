@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson21c-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Python is dynamically typed, so you do not need to declare the type of a variable before using it.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson21c-h2",
+        "type": "hint",
+        "dependencies": ["lesson21c-h1"],
+        "title": "hint-2",
+        "text": "In Python, a variable can change its value and type at any moment.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson21c-h3",
+        "type": "hint",
+        "dependencies": ["lesson21c-h2"],
+        "title": "hint-3",
+        "text": "Python variables can store integers, floats, strings, booleans and more — so the correct statement is that Python variables can store values of any type.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

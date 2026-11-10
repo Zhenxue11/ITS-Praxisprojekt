@@ -1,0 +1,23 @@
+{
+    "id": "lesson41c",
+    "stepAnswer": [
+        "Lists are ordered",
+         "Lists can store different data types",
+         "Lists are mutable"
+    ],
+    "problemType": "MultipleAnswersQuestion",
+    "stepTitle": "Which statements about Python lists are true?\nSelect all that apply. ",
+    "stepBody": "",
+    "answerType": "multipleAnswersQuestion",
+    "variabilization": {},
+    "choices": [
+         "Lists are ordered",
+         "Lists are immutable",
+         "Lists can store different data types",
+         "Lists use indexes starting at 1",
+         "Lists are mutable"
+    ],
+    "answerLatex": [ "Lists are ordered",
+         "Lists can store different data types",
+         "Lists are mutable"]
+}

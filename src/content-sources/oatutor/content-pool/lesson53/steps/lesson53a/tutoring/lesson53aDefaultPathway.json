@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson53a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Function parameters can have default values if no argument is provided.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson53a-h2",
+        "type": "hint",
+        "dependencies": ["lesson53a-h1"],
+        "title": "hint-2",
+        "text": "When the exponent is not given, the function uses the default value.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson53a-h3",
+        "type": "hint",
+        "dependencies": ["lesson53a-h2"],
+        "title": "hint-3",
+        "text": "The power operator ** computes base raised to the exponent.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

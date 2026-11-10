@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson52a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Define a function that takes one parameter and returns a value.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson52a-h2",
+        "type": "hint",
+        "dependencies": ["lesson52a-h1"],
+        "title": "hint-2",
+        "text": "Calculate the square by multiplying the number by itself.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson52a-h3",
+        "type": "hint",
+        "dependencies": ["lesson52a-h2"],
+        "title": "hint-3",
+        "text": "Call the function with the user input and print the returned result.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

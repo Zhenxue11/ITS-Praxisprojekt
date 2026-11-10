@@ -1,0 +1,33 @@
+[
+    {
+        "id": "lesson11c-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Ask yourself whether the result can contain a decimal part",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+     {
+        "id": "lesson11c-h2",
+        "type": "hint",
+        "dependencies": ["lesson11c-h1"],
+        "title": "hint-2",
+        "text": "Try to imagine what the operation 3 + 4.5 would produce",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson11c-h3",
+        "type": "hint",
+        "dependencies": ["lesson11c-h2"],
+        "title": "hint-3",
+        "text": "When an int is mixed with a float, the result is always a…",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+    
+]

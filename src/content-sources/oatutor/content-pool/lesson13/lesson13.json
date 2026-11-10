@@ -1,0 +1,10 @@
+{
+    "id": "lesson13",
+    "title":"Data-type -Programming part 2: Create Your First Values",
+    "body": "Create one variable of each of these types and print it:\n• a number (integer)\n• a decimal number (float)\n• a word (string)\n• a truth value (boolean)",
+    "variabilization": {},
+    "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+    "lesson": "Data-type",
+    "courseName": "Python-Programming"
+}

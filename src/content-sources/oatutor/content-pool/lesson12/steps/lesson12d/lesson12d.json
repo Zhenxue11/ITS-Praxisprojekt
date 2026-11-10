@@ -1,0 +1,13 @@
+{
+    "id": "lesson12d",
+    "stepAnswer": [
+        "d = \"False\"\nprint(d, \"is\", type(d))"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "d = \"False\"",
+    "stepBody": "Print both the value and the type of d",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "d = \"False\"\nprint(d, \"is\", type(d))",
+    "starterCode":"d = False"
+}

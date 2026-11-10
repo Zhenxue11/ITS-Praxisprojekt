@@ -1,0 +1,10 @@
+{
+    "id": "lesson1.4",
+    "title":"Data-type -Programming part 3: Simple Type Conversion ",
+    "body": "The variable below stores a number as text. Change it into a real number and print it.",
+    "variabilization": {},
+    "oer": "https://openstax.org/details/books/elementary-algebra-2e <OpenStax: Elementary Algebra>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>",
+    "lesson": "Data-type",
+    "courseName": "Python-Programming"
+}

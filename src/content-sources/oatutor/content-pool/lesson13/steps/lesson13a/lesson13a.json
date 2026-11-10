@@ -1,0 +1,13 @@
+{
+    "id": "lesson13a",
+    "stepAnswer": [
+        "number = 7\nprint(number)"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "",
+    "stepBody": "Create a variable named \"number\" of type integer and print it",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "number = 7\nprint(number)",
+    "starterCode": "_____ = 7 "
+}

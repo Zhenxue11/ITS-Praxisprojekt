@@ -1,0 +1,13 @@
+{
+    "id": "lesson13b",
+    "stepAnswer": [
+        "decimal = 3.5\nprint(decimal)"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "",
+    "stepBody": "Create a variable named \"decimal\" of type decimal and print it",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "decimal = 3.5\nprint(decimal)",
+    "starterCode": "____ = 3.5"
+}

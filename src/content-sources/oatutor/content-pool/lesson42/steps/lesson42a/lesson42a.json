@@ -1,0 +1,18 @@
+{
+    "id": "lesson42a",
+    "stepAnswer": [
+        "Error"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What happens?",
+    "stepBody": "x = (1, 2, 3)\nx[1] = 5",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "x becomes (1, 5, 3)",
+        "Nothing happens",
+        "Error",
+        "The last element is removed"
+    ],
+    "answerLatex": "Error"
+}   

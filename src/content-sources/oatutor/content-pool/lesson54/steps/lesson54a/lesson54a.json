@@ -1,0 +1,19 @@
+{
+    "id": "lesson54a",
+    "stepAnswer": [
+        "5"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What is the output?",
+    "stepBody": "f = lambda x: x + 3\nprint(f(2))",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "2",
+        "3",
+        "5",
+        "Error"
+    ],
+    "answerLatex": "5"
+}    
+

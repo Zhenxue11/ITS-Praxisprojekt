@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson54b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Ask the user for a number using the input function.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson54b-h2",
+        "type": "hint",
+        "dependencies": ["lesson54b-h1"],
+        "title": "hint-2",
+        "text": "Define a lambda function that adds 10 to its argument.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson54b-h3",
+        "type": "hint",
+        "dependencies": ["lesson54b-h2"],
+        "title": "hint-3",
+        "text": "Call the lambda function and print the result.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

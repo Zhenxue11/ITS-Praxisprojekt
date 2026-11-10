@@ -1,0 +1,13 @@
+{
+    "id": "lesson12b",
+    "stepAnswer": [
+        "b = \"Python\"\nprint(b, \"is\", type(b))"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "b = \"Python\"",
+    "stepBody": "Print both the value and the type of b",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "b = \"Python\"\nprint(b, \"is\", type(b))",
+    "starterCode": "b = \"Python\""
+}

@@ -1,0 +1,31 @@
+[
+    {
+        "id": "lesson33a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Use a loop to go through the numbers one by one.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson33a-h2",
+        "type": "hint",
+        "dependencies": ["lesson33a-h1"],
+        "title": "hint-2",
+        "text": "Continue looping as long as the current number is not 0.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson33a-h3",
+        "type": "hint",
+        "dependencies": ["lesson33a-h2"],
+        "title": "hint-3",
+        "text": "Stop the loop when a 0 is encountered",
+        "variabilization": {},
+        "oer": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

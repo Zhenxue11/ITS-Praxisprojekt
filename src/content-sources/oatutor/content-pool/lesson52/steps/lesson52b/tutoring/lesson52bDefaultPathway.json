@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson52b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "A function parameter can be assigned a default value.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson52b-h2",
+        "type": "hint",
+        "dependencies": ["lesson52b-h1"],
+        "title": "hint-2",
+        "text": "If the function is called without arguments, the default value is used.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson52b-h3",
+        "type": "hint",
+        "dependencies": ["lesson52b-h2"],
+        "title": "hint-3",
+        "text": "Calling the function prints the default message.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

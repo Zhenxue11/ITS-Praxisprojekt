@@ -1,0 +1,13 @@
+{
+    "id": "lesson23a",
+    "stepAnswer": [
+        "score = 10\nscore = score + 5\nprint(score)"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "score = 10",
+    "stepBody": "Increase score by 5",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "score = 10\nscore = score + 5\nprint(score)",
+    "starterCode": "score = 10"
+}

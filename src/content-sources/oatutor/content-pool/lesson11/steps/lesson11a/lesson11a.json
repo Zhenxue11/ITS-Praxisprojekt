@@ -1,0 +1,18 @@
+{
+    "id": "lesson11a",
+    "stepAnswer": [
+        "int stores whole numbers"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "which statement about int is correct ?",
+    "stepBody": "",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "int stores text",
+        "int stores whole numbers",
+        "int can only store numbers from 0 to 10",
+        "int stores decimal numbers"
+    ],
+    "answerLatex": "int stores whole numbers"
+}

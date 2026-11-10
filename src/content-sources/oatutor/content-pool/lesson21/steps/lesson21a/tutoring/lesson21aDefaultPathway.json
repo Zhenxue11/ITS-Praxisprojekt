@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson21a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "A valid variable name must start with a letter or an underscore.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson21a-h2",
+        "type": "hint",
+        "dependencies": ["lesson21a-h1"],
+        "title": "hint-2",
+        "text": "Numbers cannot appear at the beginning of a variable name, and symbols like '@' are not allowed.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson21a-h3",
+        "type": "hint",
+        "dependencies": ["lesson21a-h2"],
+        "title": "hint-3",
+        "text": "Among the options, the only valid variable name that starts correctly and is not a reserved keyword is 'my_name'.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

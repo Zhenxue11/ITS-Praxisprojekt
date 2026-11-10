@@ -1,0 +1,13 @@
+{
+    "id": "lesson54b",
+    "stepAnswer": [
+    "add10 = lambda x: x + 10\nprint(add10(5))"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Use a lambda expression to:\n  • add 10 to a number\nCall the lambda with a number and print the result.",
+    "stepBody": "A starter code is provided below to help you get started. Complete the missing parts with your own code.",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "add10 = lambda x: x + 10\nprint(add10(5))",
+    "starterCode": "# define a lambda that adds 10 to a number\n\n# call the lambda and print the result"
+}

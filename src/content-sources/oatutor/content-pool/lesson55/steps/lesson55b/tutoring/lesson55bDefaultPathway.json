@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson55b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "The global keyword allows a function to modify a global variable.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson55b-h2",
+        "type": "hint",
+        "dependencies": ["lesson55b-h1"],
+        "title": "hint-2",
+        "text": "Each call of the function increases the counter by one.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson55b-h3",
+        "type": "hint",
+        "dependencies": ["lesson55b-h2"],
+        "title": "hint-3",
+        "text": "Calling the function three times results in a counter value of three.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson31a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Check the value assigned to x before evaluating the conditions.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson31a-h2",
+        "type": "hint",
+        "dependencies": ["lesson31a-h1"],
+        "title": "hint-2",
+        "text": "The if statement is tested first, and the elif is only checked if the if condition is false.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson31a-h3",
+        "type": "hint",
+        "dependencies": ["lesson31a-h2"],
+        "title": "hint-3",
+        "text": "Since x is greater than 3 but not greater than 10, the program prints the second option.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

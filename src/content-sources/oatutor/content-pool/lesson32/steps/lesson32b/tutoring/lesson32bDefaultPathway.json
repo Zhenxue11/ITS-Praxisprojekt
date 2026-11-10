@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson32b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Use a for-loop to iterate through the numbers from 2 to 20.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson32b-h2",
+        "type": "hint",
+        "dependencies": ["lesson32b-h1"],
+        "title": "hint-2",
+        "text": "Check if a number is even using the modulo operator.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson32b-h3",
+        "type": "hint",
+        "dependencies": ["lesson32b-h2"],
+        "title": "hint-3",
+        "text": "Print the number only if the condition for being even is satisfied.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

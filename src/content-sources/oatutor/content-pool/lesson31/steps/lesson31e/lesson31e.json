@@ -1,0 +1,19 @@
+{
+    "id": "lesson31e",
+    "stepAnswer": [
+        "for", "while"
+    ],
+    "problemType": "MultipleAnswersQuestion",
+    "stepTitle": "Which loops exist in Python?\nSelect all that apply. ",
+    "stepBody": "",
+    "answerType": "multipleAnswersQuestion",
+    "variabilization": {},
+    "choices": [
+         "for",
+         "while",
+         "do-while",
+         "repeat",
+         "foreach"
+    ],
+    "answerLatex": ["for", "while"]
+}

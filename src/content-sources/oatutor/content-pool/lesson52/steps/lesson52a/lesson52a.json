@@ -1,0 +1,20 @@
+{
+    "id": "lesson52a",
+    "stepAnswer": [
+        "6"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What is the output?",
+    "stepBody": "def test(x):\n  return x * 2\nprint(test(3))",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "2",
+        "3",
+        "6",
+        "Error"
+    ],
+    "answerLatex": "6"
+}
+
+

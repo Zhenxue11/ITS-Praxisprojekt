@@ -1,0 +1,19 @@
+{
+    "id": "lesson55a",
+    "stepAnswer": [
+        "5 then 10"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What is the output?",
+    "stepBody": "x = 10\ndef f():\n  x = 5\n  print(x)\nf()\nprint(x)",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "5 then 10",
+        "10 then 5",
+        "5 then 5",
+        "Error"
+    ],
+    "answerLatex": "5 then 10"
+}    
+

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson43a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "A dictionary contains elements stored as key–value pairs.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson43a-h2",
+        "type": "hint",
+        "dependencies": ["lesson43a-h1"],
+        "title": "hint-2",
+        "text": "Assigning a value to a new key adds an element to the dictionary.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson43a-h3",
+        "type": "hint",
+        "dependencies": ["lesson43a-h2"],
+        "title": "hint-3",
+        "text": "Using len on a dictionary returns the total number of key–value pairs.",
+        "variabilization": {},
+        "oer": "https://OAToringTutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

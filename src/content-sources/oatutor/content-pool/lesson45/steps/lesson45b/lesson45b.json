@@ -1,0 +1,12 @@
+{
+    "id": "lesson45b",
+    "stepAnswer": [
+        "n = 5\nsquares = [x*x for x in range(n + 1)]\nprint(squares)"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Write a list comprehension that:\n  • creates a list of all squares from 0 to a predefined number n",
+    "stepBody": "A starter code is provided below to help you get started. Complete the missing parts with your own code.",
+    "answerType": "string",
+    "answerLatex": "n = 5\nsquares = [x*x for x in range(n + 1)]\nprint(squares)",
+    "starterCode": "n = 5\n# your comprehension here"
+}

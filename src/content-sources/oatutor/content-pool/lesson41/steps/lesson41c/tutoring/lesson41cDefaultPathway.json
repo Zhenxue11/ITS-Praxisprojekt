@@ -1,0 +1,32 @@
+[
+  {
+    "id": "lesson41c-h1",
+    "type": "hint",
+    "dependencies": [],
+    "title": "hint-1",
+    "text": "Think about how Python lists behave when you access or modify their elements.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson41c-h2",
+    "type": "hint",
+    "dependencies": ["lesson41c-h1"],
+    "title": "hint-2",
+    "text": "Consider whether the position of elements in a list matters and whether you can change a list after creating it.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson41c-h3",
+    "type": "hint",
+    "dependencies": ["lesson41c-h2"],
+    "title": "hint-3",
+    "text": "Exclude statements that contradict basic Python rules, such as index numbering or immutability of lists.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "lesson31f-h1",
+    "type": "hint",
+    "dependencies": [],
+    "title": "hint-1",
+    "text": "Focus on Python keywords that control the flow of a loop (skipping, stopping, or doing nothing).",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson31f-h2",
+    "type": "hint",
+    "dependencies": ["lesson31f-h1"],
+    "title": "hint-2",
+    "text": "Some options may sound like commands, but only Python’s actual statements count here.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson31f-h3",
+    "type": "hint",
+    "dependencies": ["lesson31f-h2"],
+    "title": "hint-3",
+    "text": "Keep only the loop-control statements that are valid Python keywords and commonly used inside for/while loops.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  }
+]

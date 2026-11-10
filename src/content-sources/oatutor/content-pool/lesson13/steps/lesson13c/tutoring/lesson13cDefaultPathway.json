@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson13c-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "After creating the variables, use print() to display them.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson13c-h2",
+        "type": "hint",
+        "dependencies": ["lesson13c-h1"],
+        "title": "hint-2",
+        "text": "You can create variables like this: name = value.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson13c-h3",
+        "type": "hint",
+        "dependencies": ["lesson13c-h2"],
+        "title": "hint-3",
+        "text": "Write four separate print(...) statements — one for each variable.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

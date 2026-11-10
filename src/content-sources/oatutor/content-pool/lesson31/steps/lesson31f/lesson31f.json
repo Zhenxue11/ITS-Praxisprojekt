@@ -1,0 +1,25 @@
+{
+    "id": "lesson31f",
+    "stepAnswer": [
+        "break",
+         "continue",
+         "pass"
+    ],
+    "problemType": "MultipleAnswersQuestion",
+    "stepTitle": "Which statements can be used inside loops?\nSelect all that apply. ",
+    "stepBody": "",
+    "answerType": "multipleAnswersQuestion",
+    "variabilization": {},
+    "choices": [
+         "break",
+         "continue",
+         "pass",
+         "stop",
+         "exit"
+    ],
+    "answerLatex": [ "break",
+         "continue",
+         "pass"]
+}
+
+

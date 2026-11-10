@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson51a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "A function can send back a value using the return statement.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson51a-h2",
+        "type": "hint",
+        "dependencies": ["lesson51a-h1"],
+        "title": "hint-2",
+        "text": "Calling the function executes it and produces the returned value.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson51a-h3",
+        "type": "hint",
+        "dependencies": ["lesson51a-h2"],
+        "title": "hint-3",
+        "text": "The print function displays the returned value of the function.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

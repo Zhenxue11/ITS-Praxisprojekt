@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson21b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Python treats uppercase and lowercase letters as different variable names.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson21b-h2",
+        "type": "hint",
+        "dependencies": ["lesson21b-h1"],
+        "title": "hint-2",
+        "text": "Here, 'x' and 'X' are two different variables with different values.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson21b-h3",
+        "type": "hint",
+        "dependencies": ["lesson21b-h2"],
+        "title": "hint-3",
+        "text": "Since you print 'x', you will see the value assigned to 'x', which is 5.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

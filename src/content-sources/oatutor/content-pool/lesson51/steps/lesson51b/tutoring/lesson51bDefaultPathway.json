@@ -1,0 +1,22 @@
+[
+    {
+        "id": "lesson51b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Define a function using the def keyword.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson51b-h2",
+        "type": "hint",
+        "dependencies": ["lesson51b-h1"],
+        "title": "hint-2",
+        "text": "Print a welcome message that includes the entered name.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

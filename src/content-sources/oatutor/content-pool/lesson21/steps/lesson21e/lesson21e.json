@@ -1,0 +1,19 @@
+{
+    "id": "lesson21e",
+    "stepAnswer": [
+        "==", "<=","!="
+    ],
+    "problemType": "MultipleAnswersQuestion",
+    "stepTitle": "Which of the following are comparison operators in Python?\nSelect all that apply. ",
+    "stepBody": "Operators",
+    "answerType": "multipleAnswersQuestion",
+    "variabilization": {},
+    "choices": [
+         "==",
+         "=",
+         "!=",
+         "<=",
+         "+="
+    ],
+    "answerLatex": ["==", "<=","!="]
+}

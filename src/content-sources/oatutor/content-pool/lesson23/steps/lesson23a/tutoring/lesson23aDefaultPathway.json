@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson23a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "To update a variable, you can reuse its own name on both sides of the assignment.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson23a-h2",
+        "type": "hint",
+        "dependencies": ["lesson23a-h1"],
+        "title": "hint-2",
+        "text": "If you want to increase the value, write something like: score = score + something.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson23a-h3",
+        "type": "hint",
+        "dependencies": ["lesson23a-h2"],
+        "title": "hint-3",
+        "text": "To increase score by 5, assign: score = score + 5, then print the updated score.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

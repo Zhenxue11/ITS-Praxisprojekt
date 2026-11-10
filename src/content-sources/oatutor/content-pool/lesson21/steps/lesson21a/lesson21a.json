@@ -1,0 +1,18 @@
+{
+    "id": "lesson21a",
+    "stepAnswer": [
+        "my_name"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "Which of the following is a valid variable name?",
+    "stepBody": "",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "2age",
+        "my_name",
+        "class",
+        "@score"
+    ],
+    "answerLatex": "my_name"
+}

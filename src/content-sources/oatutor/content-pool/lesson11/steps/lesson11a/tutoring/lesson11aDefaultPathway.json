@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson11a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "If you write x = 10 in Python, think about its data type. Is 10 written as a whole number or a decimal?",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson11a-h2",
+        "type": "hint",
+        "dependencies": ["lesson11a-h1"],
+        "title": "hint-2",
+        "text": "Among the options, choose the type that represents whole numbers like 0, 5, or -12 — but not decimal values like 3.14.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson11a-h3",
+        "type": "hint",
+        "dependencies": ["lesson11a-h2"],
+        "title": "hint-3",
+        "text": "This type is the opposite of the float type. Floats contain decimals, but this type does not.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

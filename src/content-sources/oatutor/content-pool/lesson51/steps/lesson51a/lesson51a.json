@@ -1,0 +1,22 @@
+{
+    "id": "lesson51a",
+    "stepAnswer": [
+        "5"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What does the following code print?",
+    "stepBody": "def f():\n  return 5\nprint(f())",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "Nothing",
+        "5",
+        "f",
+        "Error"
+    ],
+    "answerLatex": "5"
+}    
+
+
+
+    

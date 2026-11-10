@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson42b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Create a tuple by grouping the two values together.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson42b-h2",
+        "type": "hint",
+        "dependencies": ["lesson42b-h1"],
+        "title": "hint-2",
+        "text": "Tuples preserve the order in which their elements are stored.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson42b-h3",
+        "type": "hint",
+        "dependencies": ["lesson42b-h2"],
+        "title": "hint-3",
+        "text": "Use slicing with a step of -1 to reverse the tuple.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

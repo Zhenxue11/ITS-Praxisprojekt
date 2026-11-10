@@ -1,0 +1,13 @@
+{
+    "id": "lesson33a",
+    "stepAnswer": [
+        "numbers = [4, 7, 2, 9, 0, 5]\nindex = 0\n\nwhile numbers[index] != 0:\n  index += 1\n\nprint(\"Stopped.\")"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Write a loop that:\n• processes numbers one by one\n• stops immediately when the number 0 is encountered",
+    "stepBody": "",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "numbers = [4, 7, 2, 9, 0, 5]\nindex = 0\n\nwhile numbers[index] != 0:\n  index += 1\n\nprint(\"Stopped.\")",
+    "starterCode": "numbers = [4, 7, 2, 9, 0, 5]\nindex = 0\n\n# Write your loop here"
+}

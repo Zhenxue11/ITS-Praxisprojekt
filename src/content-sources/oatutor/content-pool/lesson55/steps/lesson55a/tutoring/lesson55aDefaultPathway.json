@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson55a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Variables defined outside functions are global variables.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson55a-h2",
+        "type": "hint",
+        "dependencies": ["lesson55a-h1"],
+        "title": "hint-2",
+        "text": "Assigning a value to a variable inside a function creates a local variable.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson55a-h3",
+        "type": "hint",
+        "dependencies": ["lesson55a-h2"],
+        "title": "hint-3",
+        "text": "The global variable remains unchanged outside the function.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

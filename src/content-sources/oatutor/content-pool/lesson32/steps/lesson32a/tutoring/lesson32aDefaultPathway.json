@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson32a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Compare the given number with zero using conditional statements.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson32a-h2",
+        "type": "hint",
+        "dependencies": ["lesson32a-h1"],
+        "title": "hint-2",
+        "text": "Use if for numbers greater than zero and elif for numbers less than zero.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson32a-h3",
+        "type": "hint",
+        "dependencies": ["lesson32a-h2"],
+        "title": "hint-3",
+        "text": "Use else to handle the case where the number is exactly zero.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson45a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "A list comprehension builds a new list by iterating over an existing list.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson45a-h2",
+        "type": "hint",
+        "dependencies": ["lesson45a-h1"],
+        "title": "hint-2",
+        "text": "The expression before the for-loop defines how each element is modified.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson45a-h3",
+        "type": "hint",
+        "dependencies": ["lesson45a-h2"],
+        "title": "hint-3",
+        "text": "Each number in the original list is increased by one in the result list.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

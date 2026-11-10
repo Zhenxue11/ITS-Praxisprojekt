@@ -1,0 +1,13 @@
+{
+    "id": "lesson55b",
+    "stepAnswer": [
+        "counter = 0\ndef increment():\n    global counter\n    counter += 1\nincrement()\nincrement()\nincrement()\nprint(\"Counter =\", counter)"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Write a program with:\n  • a global variable counter = 0\n  • a function increment() that increases counter by 1\n    • call the function 3 times and print the final value",
+    "stepBody": "A starter code is provided below to help you get started. Complete the missing parts with your own code.",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "counter = 0\ndef increment():\n    global counter\n    counter += 1\nincrement()\nincrement()\nincrement()\nprint(\"Counter =\", counter)",
+    "starterCode":"counter = 0\ndef increment():\n    # use global counter\n    # increment\n# call function 3 times\n# print counter"
+}

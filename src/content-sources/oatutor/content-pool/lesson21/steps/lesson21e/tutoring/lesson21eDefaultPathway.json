@@ -1,0 +1,32 @@
+[
+  {
+    "id": "lesson21e-h1",
+    "type": "hint",
+    "dependencies": [],
+    "title": "hint-1",
+    "text": "Look at each symbol and ask yourself: does this operator compare two values, or does it do something else?",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson21e-h2",
+    "type": "hint",
+    "dependencies": ["lesson21e-h1"],
+    "title": "hint-2",
+    "text": "Comparison operators in Python always return either True or False after comparing two values.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson21e-h3",
+    "type": "hint",
+    "dependencies": ["lesson21e-h2"],
+    "title": "hint-3",
+    "text": "Exclude operators that assign or modify values. Keep only those that check equality or order between values.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  }
+]

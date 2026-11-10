@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson21d-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "First, the variable y is assigned the value 3.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson21d-h2",
+        "type": "hint",
+        "dependencies": ["lesson21d-h1"],
+        "title": "hint-2",
+        "text": "The expression 'y = y + 7' means: take the current value of y and add 7 to it.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson21d-h3",
+        "type": "hint",
+        "dependencies": ["lesson21d-h2"],
+        "title": "hint-3",
+        "text": "3 + 7 equals 10, so the new value of y is 10.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

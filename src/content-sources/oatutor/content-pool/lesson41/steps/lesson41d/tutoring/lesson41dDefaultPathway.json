@@ -1,0 +1,32 @@
+[
+  {
+    "id": "lesson41d-h1",
+    "type": "hint",
+    "dependencies": [],
+    "title": "hint-1",
+    "text": "Look at the code and focus on what happens when you assign a new value to a specific index of a list.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson41d-h2",
+    "type": "hint",
+    "dependencies": ["lesson41d-h1"],
+    "title": "hint-2",
+    "text": "Remember that Python lists are mutable, meaning their elements can be changed after creation.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson41d-h3",
+    "type": "hint",
+    "dependencies": ["lesson41d-h2"],
+    "title": "hint-3",
+    "text": "Check which element is affected by index 1 and how this changes the final content of the list.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  }
+]

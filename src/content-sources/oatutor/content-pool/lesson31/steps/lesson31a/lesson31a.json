@@ -1,0 +1,18 @@
+{
+    "id": "lesson31a",
+    "stepAnswer": [
+        "medium"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What is the output of this code?",
+    "stepBody": "x = 5\nif x > 10:\n  print(\"big\")\nelif x > 3:\n  print(\"medium\")\nelse:\n  print(\"small\")",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "big",
+        "medium",
+        "small",
+        "Error"
+    ],
+    "answerLatex": "medium"
+}    

@@ -1,0 +1,18 @@
+{
+    "id": "lesson21b",
+    "stepAnswer": [
+        "5"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What will happen if you write the following code?\nx =5\nX = 10\nprint(x)",
+    "stepBody": "",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "5",
+        "10",
+        "Error",
+        "Both 5 and 10"
+    ],
+    "answerLatex": "5"
+}

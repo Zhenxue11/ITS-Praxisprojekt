@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson53b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "A power function is an anonymous function written in a single line.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson53b-h2",
+        "type": "hint",
+        "dependencies": ["lesson53b-h1"],
+        "title": "hint-2",
+        "text": "The expression after the colon defines the returned value.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson53b-h3",
+        "type": "hint",
+        "dependencies": ["lesson53b-h2"],
+        "title": "hint-3",
+        "text": "Calling the power with 2 adds 3 to the value.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

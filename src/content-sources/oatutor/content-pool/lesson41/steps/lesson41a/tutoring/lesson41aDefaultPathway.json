@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson41a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Remember that indexing in Python lists starts at zero.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson41a-h2",
+        "type": "hint",
+        "dependencies": ["lesson41a-h1"],
+        "title": "hint-2",
+        "text": "Using append adds a new element to the end of the list.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson41a-h3",
+        "type": "hint",
+        "dependencies": ["lesson41a-h2"],
+        "title": "hint-3",
+        "text": "Accessing index 2 returns the third element of the list.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

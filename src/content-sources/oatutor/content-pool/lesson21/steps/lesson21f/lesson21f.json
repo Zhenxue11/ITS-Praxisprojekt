@@ -1,0 +1,28 @@
+{
+    "id": "lesson21f",
+    "stepAnswer": [
+        "and",
+         "or",
+         "not",
+         "=="
+    ],
+    "problemType": "MultipleAnswersQuestion",
+    "stepTitle": "Which operators can be used with boolean values?\nSelect all that apply. ",
+    "stepBody": "Operators",
+    "answerType": "multipleAnswersQuestion",
+    "variabilization": {},
+    "choices": [
+         "and",
+         "or",
+         "not",
+         "+",
+         "=="
+    ],
+    "answerLatex":  [
+         "and",
+         "or",
+         "not",
+         "=="
+    ]
+}
+

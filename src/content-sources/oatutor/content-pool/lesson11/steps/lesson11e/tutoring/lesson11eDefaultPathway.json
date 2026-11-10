@@ -1,0 +1,32 @@
+[
+  {
+    "id": "lesson11e-h1",
+    "type": "hint",
+    "dependencies": [],
+    "title": "hint-1",
+    "text": "Look carefully at each option and ask yourself: is this a built-in Python data type or something else?",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson11e-h2",
+    "type": "hint",
+    "dependencies": ["lesson11e-h1"],
+    "title": "hint-2",
+    "text": "Some options may look similar, but only the exact Python type names count as built-in data types.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  },
+  {
+    "id": "lesson11e-h3",
+    "type": "hint",
+    "dependencies": ["lesson11e-h2"],
+    "title": "hint-3",
+    "text": "In Python, built-in data types include numeric types, text types, and boolean types. Exclude anything that is just a word, not an actual type name.",
+    "variabilization": {},
+    "oer": "https://OATutor.io <OATutor>",
+    "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+  }
+]

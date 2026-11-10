@@ -1,0 +1,18 @@
+{
+    "id": "lesson31d",
+    "stepAnswer": [
+        "0 2 3 4"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What does this code print?",
+    "stepBody": "for i in range(5):\n  if i == 3:\n    break\n  print(i)",  
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "1 2 3 4",
+        "0 1 2 3 4",
+        "0 2 3 4",
+        "Error"
+    ],
+    "answerLatex": "0 2 3 4"
+}    

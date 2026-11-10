@@ -1,0 +1,18 @@
+{
+    "id": "lesson21d",
+    "stepAnswer": [
+        "10"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What is the value of y after execution?\ny = 3\ny = y + 7",
+    "stepBody": "",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+         "3",
+         "7",
+         "10",
+         "Error"
+    ],
+    "answerLatex": "10"
+}

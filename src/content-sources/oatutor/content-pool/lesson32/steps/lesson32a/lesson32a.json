@@ -1,0 +1,13 @@
+{
+    "id": "lesson32a",
+    "stepAnswer": [
+        "num = 5\nif num > 0:\n  print(\"Positive\")\nelif num < 0:\n  print(\"Negative\")\nelse:\nprint(\"Zero\")"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Write a function that checks if a number is positive, negative, or zero.",
+    "stepBody": "Requirements:\n○ \"Positive\" if > 0\n  ○ \"Negative\" if < 0\n  ○ \"Zero\" otherwise",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "num = 5\nif num > 0:\n  print(\"Positive\")\nelif num < 0:\n  print(\"Negative\")\nelse:\nprint(\"Zero\")",
+    "starterCode": "num = 5\n if \n\nelif \n\nelse:"
+}

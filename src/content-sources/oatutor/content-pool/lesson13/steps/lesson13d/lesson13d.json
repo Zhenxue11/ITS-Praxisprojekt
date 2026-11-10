@@ -1,0 +1,13 @@
+{
+    "id": "lesson13d",
+    "stepAnswer": [
+        "truth = True\nprint(truth)"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "",
+    "stepBody": "Create a variable named \"truth\" of type boolean and print it",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "truth = True\nprint(truth)",
+    "starterCode": "___ = True"
+}

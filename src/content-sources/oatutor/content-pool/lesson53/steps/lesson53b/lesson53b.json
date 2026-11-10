@@ -1,0 +1,15 @@
+{
+    "id": "lesson53b",
+    "stepAnswer": [
+    "def power(base, exponent=2):\n  return base ** exponent\n\nprint(power(3))\nprint(power(2, 3))"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Write a function power(base, exponent=2) that:\n  • returns base ** exponent\n  • uses exponent = 2 if no value is provided\nCall the function and print the results.",
+    "stepBody": "A starter code is provided below to help you get started. Complete the missing parts with your own code.",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "def power(base, exponent=2):\n  return base ** exponent\n\nprint(power(3))\nprint(power(2, 3))",
+    "starterCode": "def power(base, exponent=2):\n  # your code here\n\n# call the function with one argument\n# call the function with two arguments"
+}
+
+

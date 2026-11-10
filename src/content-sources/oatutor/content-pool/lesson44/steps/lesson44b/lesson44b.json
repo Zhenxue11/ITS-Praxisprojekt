@@ -1,0 +1,12 @@
+{
+    "id": "lesson44b",
+    "stepAnswer": [
+        "words = set()\npredefined_words = [\"apple\", \"banana\", \"apple\", \"orange\", \"banana\"]\nfor w in predefined_words:\n    words.add(w)\nprint(\"Unique words entered:\", len(words))"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Store several words from a predefined list in a set.\nThen print how many unique words are in the set.",
+    "stepBody": "A starter code is provided below to help you get started. Complete the missing parts with your own code.",
+    "answerType": "string",
+    "answerLatex": "words = set()\npredefined_words = [\"apple\", \"banana\", \"apple\", \"orange\", \"banana\"]\nfor w in predefined_words:\n    words.add(w)\nprint(\"Unique words entered:\", len(words))",
+    "starterCode": "words = set()\npredefined_words = [\"apple\", \"banana\", \"apple\", \"orange\", \"banana\"]\n# loop through predefined_words and add each to the set\n# print the number of unique words"
+}

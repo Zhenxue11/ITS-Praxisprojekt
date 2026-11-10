@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson44a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "A set is a collection that contains only unique elements.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson44a-h2",
+        "type": "hint",
+        "dependencies": ["lesson44a-h1"],
+        "title": "hint-2",
+        "text": "When a set is created, duplicate values are removed automatically.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson44a-h3",
+        "type": "hint",
+        "dependencies": ["lesson44a-h2"],
+        "title": "hint-3",
+        "text": "The len function returns the number of unique elements in the set.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

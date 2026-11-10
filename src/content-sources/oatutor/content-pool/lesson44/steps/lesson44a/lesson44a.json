@@ -1,0 +1,20 @@
+{
+    "id": "lesson44a",
+    "stepAnswer": [
+        "3"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": " What is the output?",
+    "stepBody": "s = {1, 2, 2, 3}\nprint(len(s))",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "2",
+        "3",
+        "4",
+        "Error"
+    ],
+    "answerLatex": "3"
+}   
+
+

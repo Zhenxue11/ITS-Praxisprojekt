@@ -1,0 +1,13 @@
+{
+  "id": "lesson51b",
+  "stepAnswer": [
+    "def welcome(name):\n  print(\"Welcome,\", name + \"!\")\n\nwelcome(\"Alice\")"
+  ],
+  "problemType": "pythonInput",
+  "stepTitle": "Write a function called welcome() that:\n  • takes a parameter called name\n  • prints: \"Welcome, <name>!\"",
+  "stepBody": "A starter code is provided below to help you get started. Complete the missing parts with your own code.",
+  "answerType": "string",
+  "variabilization": {},
+  "answerLatex": "def welcome(name):\n  print(\"Welcome,\", name + \"!\")\n\nwelcome(\"Alice\")",
+  "starterCode": "def _____(name):\n  # your code here\n\n_____(\"Alice\")"
+}

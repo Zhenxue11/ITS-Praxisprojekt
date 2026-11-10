@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson45b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "Use range(n + 1) to iterate from 0 to n, including n.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson45b-h2",
+        "type": "hint",
+        "dependencies": ["lesson45b-h1"],
+        "title": "hint-2",
+        "text": "Create the list using a list comprehension instead of a regular loop.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson45b-h3",
+        "type": "hint",
+        "dependencies": ["lesson45b-h2"],
+        "title": "hint-3",
+        "text": "Square each value by multiplying the number by itself.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

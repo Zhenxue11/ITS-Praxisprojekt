@@ -1,0 +1,18 @@
+{
+    "id": "lesson11b",
+    "stepAnswer": [
+        "bool"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "Which data type only stores True or False?",
+    "stepBody": "",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "int",
+        "float",
+        "str",
+        "bool"
+    ],
+    "answerLatex": "bool"
+}

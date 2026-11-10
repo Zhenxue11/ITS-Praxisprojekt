@@ -1,0 +1,13 @@
+{
+    "id": "lesson13c",
+    "stepAnswer": [
+        "word = \"Hello World\"\nprint(word)"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "",
+    "stepBody": "Create a variable named \"word\" of type string and print it",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "word = \"Hello World\"\nprint(word)",
+    "starterCode": "____ = \"Hello World\""
+}

@@ -1,0 +1,33 @@
+{
+    "Data-type": {
+        "probMastery": 0.1,
+        "probTransit": 0.1,
+        "probSlip": 0.1,
+        "probGuess": 0.1
+    },
+     "Variables": {
+        "probMastery": 0.1,
+        "probTransit": 0.1,
+        "probSlip": 0.1,
+        "probGuess": 0.1
+    },
+    "Control flow": {
+        "probMastery": 0.1,
+        "probTransit": 0.1,
+        "probSlip": 0.1,
+        "probGuess": 0.1
+    },
+    "Data structures": {
+        "probMastery": 0.1,
+        "probTransit": 0.1,
+        "probSlip": 0.1,
+        "probGuess": 0.1
+    },
+    "Functions": {
+        "probMastery": 0.1,
+        "probTransit": 0.1,
+        "probSlip": 0.1,
+        "probGuess": 0.1
+    }
+
+}    

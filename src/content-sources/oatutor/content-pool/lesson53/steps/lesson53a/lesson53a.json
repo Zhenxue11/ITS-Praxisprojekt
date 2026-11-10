@@ -1,0 +1,20 @@
+{
+    "id": "lesson53a",
+    "stepAnswer": [
+        "Hi"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "What is printed?",
+    "stepBody": "def say(msg=\"Hi\"):\n  print(msg)\nsay()",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "msg",
+        "(nothing)",
+        "Hi",
+        "Error"
+    ],
+    "answerLatex": "Hi"
+}    
+
+

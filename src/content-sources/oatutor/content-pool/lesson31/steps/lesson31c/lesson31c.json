@@ -1,0 +1,18 @@
+{
+    "id": "lesson31c",
+    "stepAnswer": [
+        "5"
+    ],
+    "problemType": "MultipleChoice",
+    "stepTitle": "How many times does this loop run?",
+    "stepBody": "x = 0\nwhile x < 5:\n  x += 1",
+    "answerType": "string",
+    "variabilization": {},
+    "choices": [
+        "0",
+        "4",
+        "5",
+        "Infinite loop"
+    ],
+    "answerLatex": "5"
+}    

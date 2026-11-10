@@ -1,0 +1,33 @@
+[
+    {
+        "id": "lesson11b-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "which type contains only two possible values ?",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+     {
+        "id": "lesson11b-h2",
+        "type": "hint",
+        "dependencies": ["lesson11b-h1"],
+        "title": "hint-2",
+        "text": "This type does not represent numbers or text, only Truth or falsify.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson11b-h3",
+        "type": "hint",
+        "dependencies": ["lesson11b-h2"],
+        "title": "hint-3",
+        "text": "This type is the opposite of float or String .It never contains numbers or texr , only true /false.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+    
+]

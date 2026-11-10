@@ -1,0 +1,14 @@
+{
+    "id": "lesson52b",
+    "stepAnswer": [
+    "def square(x):\n  return x * x\n\nprint(\"Square:\", square(5))"
+    ],
+    "problemType": "pythonInput",
+    "stepTitle": "Write a function square(x) that returns the square of a number.\nCall the function with a number and print the result.",
+    "stepBody": "A starter code is provided below to help you get started. Complete the missing parts with your own code.",
+    "answerType": "string",
+    "variabilization": {},
+    "answerLatex": "def square(x):\n  return x * x\n\nprint(\"Square:\", square(5))",
+    "starterCode": "def square(x):\n  # return something\n\n# call the function and print the result"
+}
+

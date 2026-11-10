@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson42a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "A sequence created with parentheses is a tuple in Python.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson42a-h2",
+        "type": "hint",
+        "dependencies": ["lesson42a-h1"],
+        "title": "hint-2",
+        "text": "Tuples are immutable, which means their elements cannot be changed.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson42a-h3",
+        "type": "hint",
+        "dependencies": ["lesson42a-h2"],
+        "title": "hint-3",
+        "text": "Assigning a new value to a tuple index results in an error.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]

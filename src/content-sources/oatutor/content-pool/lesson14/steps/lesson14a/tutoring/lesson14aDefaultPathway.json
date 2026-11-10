@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lesson14a-h1",
+        "type": "hint",
+        "dependencies": [],
+        "title": "hint-1",
+        "text": "You must convert the string '10' into a real number before printing it.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson14a-h2",
+        "type": "hint",
+        "dependencies": ["lesson14a-h1"],
+        "title": "hint-2",
+        "text": "Use the function that converts a string into an integer. It looks like this: function(variable).",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    },
+    {
+        "id": "lesson14a-h3",
+        "type": "hint",
+        "dependencies": ["lesson14a-h2"],
+        "title": "hint-3",
+        "text": "The final result should be the number 10, not the string '10'.",
+        "variabilization": {},
+        "oer": "https://OATutor.io <OATutor>",
+        "license": "https://creativecommons.org/licenses/by/4.0/ <CC BY 4.0>"
+    }
+]
